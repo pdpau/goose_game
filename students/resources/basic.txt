@@ -1,0 +1,5 @@
+3x3
+GOOSE
+2 5
+DEATH
+7

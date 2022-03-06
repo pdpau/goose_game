@@ -1,0 +1,24 @@
+#ifndef GOOSE_GAME_FILE_MANAGER_H
+#define GOOSE_GAME_FILE_MANAGER_H
+
+#include "board.h"
+
+#define MAX_LOADING_BUFFER 50
+
+#define INVALID_FILE_NAME -2
+#define FILE_NOT_FOUND -3
+#define INVALID_SQUARE_LINE -4
+#define INVALID_SQUARE_DATA -5
+#define INVALID_SQUARE_POSITION -6
+#define INVALID_SQUARE_TYPE -7
+#define INVALID_SQUARE_TYPE_DATA -8
+
+
+#define FILE_LABEL_GOOSE "GOOSE"
+#define FILE_LABEL_BRIDGE "BRIDGE"
+#define FILE_LABEL_JAIL "JAIL"
+#define FILE_LABEL_DEATH "DEATH"
+
+int load_board(Board* board, char* path);
+
+#endif //GOOSE_GAME_FILE_MANAGER_H
