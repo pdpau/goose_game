@@ -252,7 +252,7 @@ int init_basic_board(Board* board) {
     return status;
 }
 
-int init_15_board(Board* board) {
+int init_15_board(Board* board) { // falta implementar el dibuix
     int status = init_board(board, 3, 5);
     if (status == SUCCESS) {
         int size = get_size(board);

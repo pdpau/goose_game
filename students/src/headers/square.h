@@ -20,11 +20,11 @@ typedef struct {
     SquareType type;
 } Square;
 
-void init_square(Square* square, int position); //??
+void init_square(Square* square, int position); //DONE
 
-int get_position(Square* square); //??
+int get_position(Square* square); //DONE
 
-SquareType get_type(Square* square); //??
-void set_type(Square* square, SquareType type); //??
+SquareType get_type(Square* square); //DONE
+void set_type(Square* square, SquareType type); //DONE
 
 #endif //SQUARE_H

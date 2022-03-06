@@ -9,7 +9,7 @@ typedef struct {
 
 void init_player(Player* player, char symbol); //DONE
 
-char get_symbol(Player* player); //??
+char get_symbol(Player* player); //DONE
 
 int get_current_position(Player* state); //DONE
 void set_current_position(Player* state, int position); //DONE

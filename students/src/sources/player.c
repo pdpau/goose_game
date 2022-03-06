@@ -10,7 +10,7 @@ void init_player(Player* player, char symbol) {
 
 // DONE: Returns the symbol associated with the player.
 char get_symbol(Player* player) {
-    char s = player->symbol; //??
+    char s = player->symbol;
     return s;
 }
 

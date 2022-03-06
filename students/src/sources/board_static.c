@@ -82,7 +82,7 @@ int find_square_by_type(Board *board, SquareType type, int starting_position, bo
         // incremental
         for (int i = starting_position+1; i < last_square_pos; i++) {
             Square* sq = get_square_at(board, i);
-            if (sq->type == type) {
+            if (get_type(sq) == type) {
                 return sq->position;
             }
         }
@@ -91,7 +91,7 @@ int find_square_by_type(Board *board, SquareType type, int starting_position, bo
         // decremental
         for (int i = starting_position-1; i > 0; i--) {
             Square* sq = get_square_at(board, i);
-            if (sq->type == type) {
+            if (get_type(sq) == type) {
                 return sq->position;
             }
         }

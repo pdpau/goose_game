@@ -6,7 +6,7 @@
 void init_state(State* state, Board* board) {
     state->turn = 0;
     state->finished = false;
-    state->player_count = 2;
+    state->player_count = 0;
     state->board = board;
 }
 
@@ -35,9 +35,10 @@ int add_player(State* state, char symbol) {
 
 // DONE: Returns the corresponding player.
 Player* get_player(State* state, int idx) {
-    // if(idx < 0 || idx >= state-> player_count)
-    //return NULL;
-    return &state->players[idx]; //??
+    if(idx < 0 || idx >= state->player_count) {
+        return NULL;
+    }
+    return &state->players[idx];
 }
 
 // DONE: Returns the current player, according to the turn.
@@ -51,20 +52,10 @@ void set_finished(State* state, bool finished) {
     state->finished = finished;
 }
 
-// TODO: Returns the value of is_finished flag (true or false),
+// DONE: Returns the value of is_finished flag (true or false),
 //  marking a game as finished.
-
-/**
- * Pre:
- * Post:
- *
- * Returns the value of is_finished flag (true or false),
- * marking a game as finished.
- *
- * @param state The state to be updated.
- */
-bool is_finished(State* state) { // ??????
-    return true;
+bool is_finished(State* state) {
+    return state->finished;
 }
 
 // TODO: Moves the current player a number of steps in the board, updating the state's current
@@ -91,6 +82,9 @@ bool is_finished(State* state) { // ??????
 int move(State* state, int dice_value, bool print_actions) {
     int status = SUCCESS;
     Player* player = get_current_player(state);
+    if (!player || dice_value < 1) {
+        return ERROR;
+    }
 
     int blocked_turns = get_blocked_turns(player);
     if (blocked_turns > 0) { //si esta bloquejat, treiem un torn al bloc i avancem el torn
@@ -101,7 +95,7 @@ int move(State* state, int dice_value, bool print_actions) {
         int board_size = get_size(board);
         int current_position = get_current_position(player);
 
-        current_position *= dice_value; // += ????
+        current_position += dice_value;
         if (current_position == board_size - 1) { // aquí comprovem si s'ha arribat al final del taulell
             set_finished(state, true);
             set_current_position(player, current_position);
@@ -114,55 +108,56 @@ int move(State* state, int dice_value, bool print_actions) {
             set_current_position(player, current_position);
 
             // obtenim la casella que hi ha en la posició current_position i el seu tipus
-            Square *current_square = get_square_at(board, current_position);
+            Square* current_square = get_square_at(board, current_position);
             SquareType type = get_type(current_square);
             if (type == GOOSE) {
                 // si es la ultima oca vuelve para atras?????
                 //posicion de la siguiente oca
                 int pos = find_square_by_type(board, GOOSE, current_position, false);
+                if (print_actions == true) {
+                    printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), get_position(pos));
+                    // print del GOOSE EFFECT
+                }
                 set_current_position(player, pos);
-                //status = do_goose_effect(state, print_actions);
             } else if (type == BRIDGE_LOW) {
                 // ir al puente de arriba
                 int pos = find_square_by_type(board, BRIDGE_LOW, current_position, false);
+                if (print_actions == true) {
+                    printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), get_position(pos));
+                    // print del BRIDGE EFFECT
+                }
                 set_current_position(player, pos);
-                //status = do_bridge_low_effect(state, print_actions);
             } else if (type == BRIDGE_HIGH) {
                 // ir al puente de abajo (reverse = true)
                 int pos = find_square_by_type(board, BRIDGE_HIGH, current_position, true);
+                if (print_actions == true) {
+                    printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), get_position(pos));
+                    // print del BRIDGE EFFECT
+                }
                 set_current_position(player, pos);
-                //status = do_bridge_high_effect(state, print_actions);
             } else if (type == JAIL) {
                 // perder 1 turno
-                set_blocked_turns(player, 1);
-                //status = do_jail_effect(state, print_actions);
+                if (print_actions == true) {
+                    printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), get_current_position(player));
+                    printf("JAIL: Block player during %d turns.\n", BLOCKED_JAIL);
+                }
+                set_blocked_turns(player, BLOCKED_JAIL);
             } else if (type == DEATH) {
                 // volver al inicio
+                if (print_actions == true) {
+                    printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), 1);
+                    printf("DEATH: Player dies and go to %d position.\n", 1);
+                }
                 set_current_position(player, 1);
-                //status = do_death_effect(state, print_actions);
             }
         }
     }
+
+    Square* last_sq = get_square_at(state->board, get_current_position(player));
+    if (get_position(last_sq) == get_size(state->board)) {
+        set_finished(state, true);
+    }
+
     return status;
 }
 
-//int do_goose_effect(State* state, bool actions) {
-//    // it a siguiente oca
-//    return 0;
-//}
-//int do_bridge_low_effect(State* state, bool actions) {
-//    // ir al puente de arriba
-//    return 0;
-//}
-//int do_bridge_high_effect(State* state, bool actions) {
-//    // ir al puente de abajo
-//    return 0;
-//}
-//int do_jail_effect(State* state, bool actions) {
-//    // blocked turns = 3
-//    return 0;
-//}
-//int do_death_effect(State* state, bool actions) {
-//    // volver a square 0
-//    return 0;
-//}

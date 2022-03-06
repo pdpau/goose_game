@@ -6,6 +6,7 @@
 #include "player.h"
 
 #define MAX_PLAYERS 3
+#define BLOCKED_JAIL 1
 
 typedef struct {
     Board* board;
@@ -17,22 +18,16 @@ typedef struct {
 
 void init_state(State* state, Board* board); //DONE
 
-int get_player_count(State* state); //??
+int get_player_count(State* state); //DONE
 
 int add_player(State* state, char symbol); //DONE
-Player* get_player(State* state, int idx); //??
+Player* get_player(State* state, int idx); //DONE
 Player* get_current_player(State* state); //DONE
 
-bool is_finished(State* state); //TODO
+bool is_finished(State* state); //DONE
 void set_finished(State* state, bool finished); //DONE
 
 int move(State* state, int dice_value, bool print_actions); //DOING
-
-//int do_goose_effect(State* state, bool actions);
-//int do_bridge_low_effect(State* state, bool actions);
-//int do_bridge_high_effect(State* state, bool actions);
-//int do_jail_effect(State* state, bool actions);
-//int do_death_effect(State* state, bool actions);
 
 
 #endif //STATE_H

@@ -19,11 +19,11 @@ void set_rows(Board* board, int size); //DONE
 int get_columns(Board* board); //DONE
 void set_columns(Board* board, int size); //DONE
 
-int get_size(Board* board); //??
+int get_size(Board* board); //DONE
 
 Square* get_square_at(Board* board, int position); //DONE
 int find_square_by_type(Board *board, SquareType type, int starting_position, bool reverse); //DONE
 
-void free_board(Board* board); //TODO
+void free_board(Board* board);
 
 #endif //BOARD_H
