@@ -93,7 +93,7 @@ int show_load_menu(Board *board) {
                 break;
         }
     }
-    //draw_board(stdout, board, NULL);
+    // draw_board(stdout, board, NULL);
     return status;
 }
 
@@ -110,6 +110,9 @@ void show_game_menu(Board *board) {
         switch (option) {
             case OPTION_START_GAME:
                 start_game(board);
+                break;
+            case OPTION_SHOW_SOLUTION:
+                solve(board);
                 break;
             case OPTION_CANCEL:
                 break;
@@ -141,7 +144,7 @@ void show_menu() {
                 show_game_menu(&board);
             }
             // If the board was loaded successfully, do clean up
-            if ((load_result != FILE_NOT_FOUND) && (load_result != INVALID_FILE_NAME) && (load_result != INVALID_BOARD_DIMENSIONS)) {
+            if (load_result != FILE_NOT_FOUND && load_result != INVALID_FILE_NAME && load_result != INVALID_BOARD_DIMENSIONS) {
                 free_board(&board);
             }
         } else if (option == OPTION_EMPTY) {

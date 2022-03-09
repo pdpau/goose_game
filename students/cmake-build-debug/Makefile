@@ -116,24 +116,61 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named goose_game_p2
+# Target rules for targets named goose_game_p3_static
 
 # Build rule for target.
-goose_game_p2: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 goose_game_p2
-.PHONY : goose_game_p2
+goose_game_p3_static: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 goose_game_p3_static
+.PHONY : goose_game_p3_static
 
 # fast build rule for target.
-goose_game_p2/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/build
-.PHONY : goose_game_p2/fast
+goose_game_p3_static/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/build
+.PHONY : goose_game_p3_static/fast
+
+#=============================================================================
+# Target rules for targets named goose_game_p3_dynamic
+
+# Build rule for target.
+goose_game_p3_dynamic: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 goose_game_p3_dynamic
+.PHONY : goose_game_p3_dynamic
+
+# fast build rule for target.
+goose_game_p3_dynamic/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/build
+.PHONY : goose_game_p3_dynamic/fast
+
+src/sources/board_dynamic.obj: src/sources/board_dynamic.c.obj
+.PHONY : src/sources/board_dynamic.obj
+
+# target to build an object file
+src/sources/board_dynamic.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/board_dynamic.c.obj
+.PHONY : src/sources/board_dynamic.c.obj
+
+src/sources/board_dynamic.i: src/sources/board_dynamic.c.i
+.PHONY : src/sources/board_dynamic.i
+
+# target to preprocess a source file
+src/sources/board_dynamic.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/board_dynamic.c.i
+.PHONY : src/sources/board_dynamic.c.i
+
+src/sources/board_dynamic.s: src/sources/board_dynamic.c.s
+.PHONY : src/sources/board_dynamic.s
+
+# target to generate assembly for a file
+src/sources/board_dynamic.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/board_dynamic.c.s
+.PHONY : src/sources/board_dynamic.c.s
 
 src/sources/board_static.obj: src/sources/board_static.c.obj
 .PHONY : src/sources/board_static.obj
 
 # target to build an object file
 src/sources/board_static.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/board_static.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/board_static.c.obj
 .PHONY : src/sources/board_static.c.obj
 
 src/sources/board_static.i: src/sources/board_static.c.i
@@ -141,7 +178,7 @@ src/sources/board_static.i: src/sources/board_static.c.i
 
 # target to preprocess a source file
 src/sources/board_static.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/board_static.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/board_static.c.i
 .PHONY : src/sources/board_static.c.i
 
 src/sources/board_static.s: src/sources/board_static.c.s
@@ -149,7 +186,7 @@ src/sources/board_static.s: src/sources/board_static.c.s
 
 # target to generate assembly for a file
 src/sources/board_static.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/board_static.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/board_static.c.s
 .PHONY : src/sources/board_static.c.s
 
 src/sources/board_utils.obj: src/sources/board_utils.c.obj
@@ -157,7 +194,8 @@ src/sources/board_utils.obj: src/sources/board_utils.c.obj
 
 # target to build an object file
 src/sources/board_utils.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/board_utils.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/board_utils.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/board_utils.c.obj
 .PHONY : src/sources/board_utils.c.obj
 
 src/sources/board_utils.i: src/sources/board_utils.c.i
@@ -165,7 +203,8 @@ src/sources/board_utils.i: src/sources/board_utils.c.i
 
 # target to preprocess a source file
 src/sources/board_utils.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/board_utils.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/board_utils.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/board_utils.c.i
 .PHONY : src/sources/board_utils.c.i
 
 src/sources/board_utils.s: src/sources/board_utils.c.s
@@ -173,7 +212,8 @@ src/sources/board_utils.s: src/sources/board_utils.c.s
 
 # target to generate assembly for a file
 src/sources/board_utils.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/board_utils.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/board_utils.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/board_utils.c.s
 .PHONY : src/sources/board_utils.c.s
 
 src/sources/file_manager.obj: src/sources/file_manager.c.obj
@@ -181,7 +221,8 @@ src/sources/file_manager.obj: src/sources/file_manager.c.obj
 
 # target to build an object file
 src/sources/file_manager.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/file_manager.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/file_manager.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/file_manager.c.obj
 .PHONY : src/sources/file_manager.c.obj
 
 src/sources/file_manager.i: src/sources/file_manager.c.i
@@ -189,7 +230,8 @@ src/sources/file_manager.i: src/sources/file_manager.c.i
 
 # target to preprocess a source file
 src/sources/file_manager.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/file_manager.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/file_manager.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/file_manager.c.i
 .PHONY : src/sources/file_manager.c.i
 
 src/sources/file_manager.s: src/sources/file_manager.c.s
@@ -197,7 +239,8 @@ src/sources/file_manager.s: src/sources/file_manager.c.s
 
 # target to generate assembly for a file
 src/sources/file_manager.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/file_manager.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/file_manager.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/file_manager.c.s
 .PHONY : src/sources/file_manager.c.s
 
 src/sources/game.obj: src/sources/game.c.obj
@@ -205,7 +248,8 @@ src/sources/game.obj: src/sources/game.c.obj
 
 # target to build an object file
 src/sources/game.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/game.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/game.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/game.c.obj
 .PHONY : src/sources/game.c.obj
 
 src/sources/game.i: src/sources/game.c.i
@@ -213,7 +257,8 @@ src/sources/game.i: src/sources/game.c.i
 
 # target to preprocess a source file
 src/sources/game.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/game.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/game.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/game.c.i
 .PHONY : src/sources/game.c.i
 
 src/sources/game.s: src/sources/game.c.s
@@ -221,7 +266,8 @@ src/sources/game.s: src/sources/game.c.s
 
 # target to generate assembly for a file
 src/sources/game.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/game.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/game.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/game.c.s
 .PHONY : src/sources/game.c.s
 
 src/sources/main.obj: src/sources/main.c.obj
@@ -229,7 +275,8 @@ src/sources/main.obj: src/sources/main.c.obj
 
 # target to build an object file
 src/sources/main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/main.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/main.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/main.c.obj
 .PHONY : src/sources/main.c.obj
 
 src/sources/main.i: src/sources/main.c.i
@@ -237,7 +284,8 @@ src/sources/main.i: src/sources/main.c.i
 
 # target to preprocess a source file
 src/sources/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/main.c.i
 .PHONY : src/sources/main.c.i
 
 src/sources/main.s: src/sources/main.c.s
@@ -245,7 +293,8 @@ src/sources/main.s: src/sources/main.c.s
 
 # target to generate assembly for a file
 src/sources/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/main.c.s
 .PHONY : src/sources/main.c.s
 
 src/sources/menu.obj: src/sources/menu.c.obj
@@ -253,7 +302,8 @@ src/sources/menu.obj: src/sources/menu.c.obj
 
 # target to build an object file
 src/sources/menu.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/menu.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/menu.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/menu.c.obj
 .PHONY : src/sources/menu.c.obj
 
 src/sources/menu.i: src/sources/menu.c.i
@@ -261,7 +311,8 @@ src/sources/menu.i: src/sources/menu.c.i
 
 # target to preprocess a source file
 src/sources/menu.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/menu.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/menu.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/menu.c.i
 .PHONY : src/sources/menu.c.i
 
 src/sources/menu.s: src/sources/menu.c.s
@@ -269,7 +320,8 @@ src/sources/menu.s: src/sources/menu.c.s
 
 # target to generate assembly for a file
 src/sources/menu.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/menu.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/menu.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/menu.c.s
 .PHONY : src/sources/menu.c.s
 
 src/sources/player.obj: src/sources/player.c.obj
@@ -277,7 +329,8 @@ src/sources/player.obj: src/sources/player.c.obj
 
 # target to build an object file
 src/sources/player.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/player.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/player.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/player.c.obj
 .PHONY : src/sources/player.c.obj
 
 src/sources/player.i: src/sources/player.c.i
@@ -285,7 +338,8 @@ src/sources/player.i: src/sources/player.c.i
 
 # target to preprocess a source file
 src/sources/player.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/player.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/player.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/player.c.i
 .PHONY : src/sources/player.c.i
 
 src/sources/player.s: src/sources/player.c.s
@@ -293,15 +347,44 @@ src/sources/player.s: src/sources/player.c.s
 
 # target to generate assembly for a file
 src/sources/player.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/player.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/player.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/player.c.s
 .PHONY : src/sources/player.c.s
+
+src/sources/sequence.obj: src/sources/sequence.c.obj
+.PHONY : src/sources/sequence.obj
+
+# target to build an object file
+src/sources/sequence.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/sequence.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/sequence.c.obj
+.PHONY : src/sources/sequence.c.obj
+
+src/sources/sequence.i: src/sources/sequence.c.i
+.PHONY : src/sources/sequence.i
+
+# target to preprocess a source file
+src/sources/sequence.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/sequence.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/sequence.c.i
+.PHONY : src/sources/sequence.c.i
+
+src/sources/sequence.s: src/sources/sequence.c.s
+.PHONY : src/sources/sequence.s
+
+# target to generate assembly for a file
+src/sources/sequence.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/sequence.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/sequence.c.s
+.PHONY : src/sources/sequence.c.s
 
 src/sources/square.obj: src/sources/square.c.obj
 .PHONY : src/sources/square.obj
 
 # target to build an object file
 src/sources/square.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/square.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/square.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/square.c.obj
 .PHONY : src/sources/square.c.obj
 
 src/sources/square.i: src/sources/square.c.i
@@ -309,7 +392,8 @@ src/sources/square.i: src/sources/square.c.i
 
 # target to preprocess a source file
 src/sources/square.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/square.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/square.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/square.c.i
 .PHONY : src/sources/square.c.i
 
 src/sources/square.s: src/sources/square.c.s
@@ -317,7 +401,8 @@ src/sources/square.s: src/sources/square.c.s
 
 # target to generate assembly for a file
 src/sources/square.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/square.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/square.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/square.c.s
 .PHONY : src/sources/square.c.s
 
 src/sources/state.obj: src/sources/state.c.obj
@@ -325,7 +410,8 @@ src/sources/state.obj: src/sources/state.c.obj
 
 # target to build an object file
 src/sources/state.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/state.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/state.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/state.c.obj
 .PHONY : src/sources/state.c.obj
 
 src/sources/state.i: src/sources/state.c.i
@@ -333,7 +419,8 @@ src/sources/state.i: src/sources/state.c.i
 
 # target to preprocess a source file
 src/sources/state.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/state.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/state.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/state.c.i
 .PHONY : src/sources/state.c.i
 
 src/sources/state.s: src/sources/state.c.s
@@ -341,7 +428,8 @@ src/sources/state.s: src/sources/state.c.s
 
 # target to generate assembly for a file
 src/sources/state.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/state.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/state.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/state.c.s
 .PHONY : src/sources/state.c.s
 
 src/sources/utils.obj: src/sources/utils.c.obj
@@ -349,7 +437,8 @@ src/sources/utils.obj: src/sources/utils.c.obj
 
 # target to build an object file
 src/sources/utils.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/utils.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/utils.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/utils.c.obj
 .PHONY : src/sources/utils.c.obj
 
 src/sources/utils.i: src/sources/utils.c.i
@@ -357,7 +446,8 @@ src/sources/utils.i: src/sources/utils.c.i
 
 # target to preprocess a source file
 src/sources/utils.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/utils.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/utils.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/utils.c.i
 .PHONY : src/sources/utils.c.i
 
 src/sources/utils.s: src/sources/utils.c.s
@@ -365,7 +455,8 @@ src/sources/utils.s: src/sources/utils.c.s
 
 # target to generate assembly for a file
 src/sources/utils.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p2.dir\build.make CMakeFiles/goose_game_p2.dir/src/sources/utils.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_static.dir\build.make CMakeFiles/goose_game_p3_static.dir/src/sources/utils.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/src/sources/utils.c.s
 .PHONY : src/sources/utils.c.s
 
 # Help Target
@@ -376,7 +467,11 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... goose_game_p2
+	@echo ... goose_game_p3_dynamic
+	@echo ... goose_game_p3_static
+	@echo ... src/sources/board_dynamic.obj
+	@echo ... src/sources/board_dynamic.i
+	@echo ... src/sources/board_dynamic.s
 	@echo ... src/sources/board_static.obj
 	@echo ... src/sources/board_static.i
 	@echo ... src/sources/board_static.s
@@ -398,6 +493,9 @@ help:
 	@echo ... src/sources/player.obj
 	@echo ... src/sources/player.i
 	@echo ... src/sources/player.s
+	@echo ... src/sources/sequence.obj
+	@echo ... src/sources/sequence.i
+	@echo ... src/sources/sequence.s
 	@echo ... src/sources/square.obj
 	@echo ... src/sources/square.i
 	@echo ... src/sources/square.s

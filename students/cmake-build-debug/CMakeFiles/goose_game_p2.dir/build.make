@@ -208,6 +208,34 @@ CMakeFiles/goose_game_p2.dir/src/sources/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/goose_game_p2.dir/src/sources/main.c.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\pdpau\Google Drive\2. Uni\1r Curs\2n Trimestre\Estructures de Dades i Algorismes I\Practica\goose_game_p2\students\src\sources\main.c" -o CMakeFiles\goose_game_p2.dir\src\sources\main.c.s
 
+CMakeFiles/goose_game_p2.dir/src/sources/sequence.c.obj: CMakeFiles/goose_game_p2.dir/flags.make
+CMakeFiles/goose_game_p2.dir/src/sources/sequence.c.obj: ../src/sources/sequence.c
+CMakeFiles/goose_game_p2.dir/src/sources/sequence.c.obj: CMakeFiles/goose_game_p2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\pdpau\Google Drive\2. Uni\1r Curs\2n Trimestre\Estructures de Dades i Algorismes I\Practica\goose_game_p2\students\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/goose_game_p2.dir/src/sources/sequence.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/goose_game_p2.dir/src/sources/sequence.c.obj -MF CMakeFiles\goose_game_p2.dir\src\sources\sequence.c.obj.d -o CMakeFiles\goose_game_p2.dir\src\sources\sequence.c.obj -c "C:\Users\pdpau\Google Drive\2. Uni\1r Curs\2n Trimestre\Estructures de Dades i Algorismes I\Practica\goose_game_p2\students\src\sources\sequence.c"
+
+CMakeFiles/goose_game_p2.dir/src/sources/sequence.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/goose_game_p2.dir/src/sources/sequence.c.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\pdpau\Google Drive\2. Uni\1r Curs\2n Trimestre\Estructures de Dades i Algorismes I\Practica\goose_game_p2\students\src\sources\sequence.c" > CMakeFiles\goose_game_p2.dir\src\sources\sequence.c.i
+
+CMakeFiles/goose_game_p2.dir/src/sources/sequence.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/goose_game_p2.dir/src/sources/sequence.c.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\pdpau\Google Drive\2. Uni\1r Curs\2n Trimestre\Estructures de Dades i Algorismes I\Practica\goose_game_p2\students\src\sources\sequence.c" -o CMakeFiles\goose_game_p2.dir\src\sources\sequence.c.s
+
+CMakeFiles/goose_game_p2.dir/src/sources/board_dynamic.c.obj: CMakeFiles/goose_game_p2.dir/flags.make
+CMakeFiles/goose_game_p2.dir/src/sources/board_dynamic.c.obj: ../src/sources/board_dynamic.c
+CMakeFiles/goose_game_p2.dir/src/sources/board_dynamic.c.obj: CMakeFiles/goose_game_p2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\pdpau\Google Drive\2. Uni\1r Curs\2n Trimestre\Estructures de Dades i Algorismes I\Practica\goose_game_p2\students\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/goose_game_p2.dir/src/sources/board_dynamic.c.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/goose_game_p2.dir/src/sources/board_dynamic.c.obj -MF CMakeFiles\goose_game_p2.dir\src\sources\board_dynamic.c.obj.d -o CMakeFiles\goose_game_p2.dir\src\sources\board_dynamic.c.obj -c "C:\Users\pdpau\Google Drive\2. Uni\1r Curs\2n Trimestre\Estructures de Dades i Algorismes I\Practica\goose_game_p2\students\src\sources\board_dynamic.c"
+
+CMakeFiles/goose_game_p2.dir/src/sources/board_dynamic.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/goose_game_p2.dir/src/sources/board_dynamic.c.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "C:\Users\pdpau\Google Drive\2. Uni\1r Curs\2n Trimestre\Estructures de Dades i Algorismes I\Practica\goose_game_p2\students\src\sources\board_dynamic.c" > CMakeFiles\goose_game_p2.dir\src\sources\board_dynamic.c.i
+
+CMakeFiles/goose_game_p2.dir/src/sources/board_dynamic.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/goose_game_p2.dir/src/sources/board_dynamic.c.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "C:\Users\pdpau\Google Drive\2. Uni\1r Curs\2n Trimestre\Estructures de Dades i Algorismes I\Practica\goose_game_p2\students\src\sources\board_dynamic.c" -o CMakeFiles\goose_game_p2.dir\src\sources\board_dynamic.c.s
+
 # Object files for target goose_game_p2
 goose_game_p2_OBJECTS = \
 "CMakeFiles/goose_game_p2.dir/src/sources/utils.c.obj" \
@@ -219,7 +247,9 @@ goose_game_p2_OBJECTS = \
 "CMakeFiles/goose_game_p2.dir/src/sources/board_utils.c.obj" \
 "CMakeFiles/goose_game_p2.dir/src/sources/game.c.obj" \
 "CMakeFiles/goose_game_p2.dir/src/sources/menu.c.obj" \
-"CMakeFiles/goose_game_p2.dir/src/sources/main.c.obj"
+"CMakeFiles/goose_game_p2.dir/src/sources/main.c.obj" \
+"CMakeFiles/goose_game_p2.dir/src/sources/sequence.c.obj" \
+"CMakeFiles/goose_game_p2.dir/src/sources/board_dynamic.c.obj"
 
 # External object files for target goose_game_p2
 goose_game_p2_EXTERNAL_OBJECTS =
@@ -234,11 +264,13 @@ goose_game_p2.exe: CMakeFiles/goose_game_p2.dir/src/sources/board_utils.c.obj
 goose_game_p2.exe: CMakeFiles/goose_game_p2.dir/src/sources/game.c.obj
 goose_game_p2.exe: CMakeFiles/goose_game_p2.dir/src/sources/menu.c.obj
 goose_game_p2.exe: CMakeFiles/goose_game_p2.dir/src/sources/main.c.obj
+goose_game_p2.exe: CMakeFiles/goose_game_p2.dir/src/sources/sequence.c.obj
+goose_game_p2.exe: CMakeFiles/goose_game_p2.dir/src/sources/board_dynamic.c.obj
 goose_game_p2.exe: CMakeFiles/goose_game_p2.dir/build.make
 goose_game_p2.exe: CMakeFiles/goose_game_p2.dir/linklibs.rsp
 goose_game_p2.exe: CMakeFiles/goose_game_p2.dir/objects1.rsp
 goose_game_p2.exe: CMakeFiles/goose_game_p2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\pdpau\Google Drive\2. Uni\1r Curs\2n Trimestre\Estructures de Dades i Algorismes I\Practica\goose_game_p2\students\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Linking C executable goose_game_p2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\pdpau\Google Drive\2. Uni\1r Curs\2n Trimestre\Estructures de Dades i Algorismes I\Practica\goose_game_p2\students\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Linking C executable goose_game_p2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\goose_game_p2.dir\link.txt --verbose=$(VERBOSE)
 	"C:\Program Files\JetBrains\CLion 2021.3.2\bin\cmake\win\bin\cmake.exe" -E copy_directory "C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/resources/" "C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/resources/"
 

@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/goose_game_p2.dir/src/sources/board_dynamic.c.obj"
+  "CMakeFiles/goose_game_p2.dir/src/sources/board_dynamic.c.obj.d"
   "CMakeFiles/goose_game_p2.dir/src/sources/board_static.c.obj"
   "CMakeFiles/goose_game_p2.dir/src/sources/board_static.c.obj.d"
   "CMakeFiles/goose_game_p2.dir/src/sources/board_utils.c.obj"
@@ -13,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/goose_game_p2.dir/src/sources/menu.c.obj.d"
   "CMakeFiles/goose_game_p2.dir/src/sources/player.c.obj"
   "CMakeFiles/goose_game_p2.dir/src/sources/player.c.obj.d"
+  "CMakeFiles/goose_game_p2.dir/src/sources/sequence.c.obj"
+  "CMakeFiles/goose_game_p2.dir/src/sources/sequence.c.obj.d"
   "CMakeFiles/goose_game_p2.dir/src/sources/square.c.obj"
   "CMakeFiles/goose_game_p2.dir/src/sources/square.c.obj.d"
   "CMakeFiles/goose_game_p2.dir/src/sources/state.c.obj"

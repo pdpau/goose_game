@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <sys/select.h> // what is this??
+#include <sys/select.h>
 #include <unistd.h>
-
-//#include <winsock.h> //??
-//#include <winsock2.h> //??
 
 #include "../headers/game.h"
 #include "../headers/utils.h"
 #include "../headers/state.h"
 #include "../headers/board_utils.h"
+#include "../headers/sequence.h"
+
 
 #define MAX_ITERATIONS 1000
+#define MAX_DEPTH 6
 
 char show_game_options() {
     char option = read_char_option("Press T for throwing the dice, Q for quit\n");
@@ -116,5 +116,65 @@ void start_game(Board *board) {
         draw_zigzag_board(stdout, &state);
         Player* player = get_current_player(&state);
         printf("Player %c won!\n", get_symbol(player));
+    }
+}
+
+Sequence* try_dice_values(State state, int depth);
+
+/**
+ * TODO: First, checks if the step count reached the max_depth. If so, returns NULL. If there is room for more steps,
+ * does a move (calling move function which updates the state) and checks the result. If the finish square was reached by
+ * this movement, creates a sequence, initializing it. If it doesn't, calls try_dice_values to continue searching. This
+ * call should return the shortest sequence or NULL. Finally, the step should be added to the sequence, if there is one.
+ *
+ * @param state The state to move from.
+ * @param count The number of steps taken already.
+ * @param max_depth The maximum depth allowed.
+ *
+ * Pre:
+ * Post:
+ */
+Sequence* do_recursive_move(State state, int dice_value, int depth) {
+    return NULL;
+}
+
+
+/**
+ * TODO: Given a state, calls do_recursive_move with each dice value looking for sequences that leads to the final square.
+ * For each resulting sequence, it returns the shortest one.
+ *
+ * @param state The state to move from.
+ * @param depth The number of steps taken already.
+ *
+ * Pre:
+ * Post:
+ */
+Sequence* try_dice_values(State state, int depth) {
+    return NULL;
+}
+
+/**
+ * Explores the different sequences of dice values that leads to the finish square until a specified MAX_DEPTH,
+ * printing the best one, if any.
+ *
+ * @param board The playing board.
+ *
+ * Pre: The board is properly initialized.
+ * Post: Prints a sequence that leads to the final square or a message pointing out that
+ * no sequence was found before reaching the maximum depth.
+ */
+void solve(Board *board) {
+
+    State state;
+    init_state(&state, board);
+    add_player(&state, 'X');
+
+    Sequence* sequence = try_dice_values(state, 0);
+    if (sequence == NULL) {
+        printf("No solution found! (max depth: %d)", MAX_DEPTH);
+    } else {
+        printf("Solution:\n");
+        print_sequence(sequence);
+        clear_sequence(sequence);
     }
 }
