@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include <sys/select.h>
+//#include <sys/select.h>
 #include <unistd.h>
 
 #include "../headers/game.h"
@@ -19,43 +19,42 @@ char show_game_options() {
     return option;
 }
 
-int wait_keypress(int usec) {
-    struct timeval timeout = {0, usec};
-    fd_set fds;
-    FD_ZERO(&fds);
-    FD_SET(STDIN_FILENO, &fds);
-    int ret = select(1, &fds, NULL, NULL, &timeout);
-    if (ret == -1) {
-        printf("Oops! Something wrong happened...\n");
-    } else if (ret == 0) {
-        printf("Doesn't matter. You're too slow!\n");
-    } else {
-        flush_input();
-    }
-    return ret;
-}
+//int wait_keypress(int usec) {
+//    struct timeval timeout = {0, usec};
+//    fd_set fds;
+//    FD_ZERO(&fds);
+//    FD_SET(STDIN_FILENO, &fds);
+//    int ret = select(1, &fds, NULL, NULL, &timeout);
+//    if (ret == -1) {
+//        printf("Oops! Something wrong happened...\n");
+//    } else if (ret == 0) {
+//        printf("Doesn't matter. You're too slow!\n");
+//    } else {
+//        flush_input();
+//    }
+//    return ret;
+//}
 
-int throw_dice(bool with_rolling) {
+int throw_dice() { // throw_dice(bool with_rolling)
     int value = (rand() % 6) + 1;
-
-    if (with_rolling) {
-        int iterations = 0;
-        bool keypressed = false;
-        while (keypressed == false && iterations < MAX_ITERATIONS) {
-            value = (rand() % 6) + 1;
-            printf("\rRolling... %d (Press Enter)", value);
-            fflush(NULL);
-            keypressed = wait_keypress(10000);
-            iterations++;
-        }
-        if (iterations >= MAX_ITERATIONS) {
-            printf("\n");
-        }
-        value = (rand() % 6) + 1;
-        printf("\rLast roll: %d!\n", value);
-    } else {
-        printf("Dice roll... %d!\n", value);
-    }
+//    if (with_rolling) {
+//        int iterations = 0;
+//        bool keypressed = false;
+//        while (keypressed == false && iterations < MAX_ITERATIONS) {
+//            value = (rand() % 6) + 1;
+//            printf("\rRolling... %d (Press Enter)", value);
+//            fflush(NULL);
+//            keypressed = wait_keypress(10000);
+//            iterations++;
+//        }
+//        if (iterations >= MAX_ITERATIONS) {
+//            printf("\n");
+//        }
+//        value = (rand() % 6) + 1;
+//        printf("\rLast roll: %d!\n", value);
+//    } else {
+//        printf("Dice roll... %d!\n", value);
+//    }
     return value;
 }
 
@@ -102,7 +101,7 @@ void start_game(Board *board) {
 
         char option = show_game_options();
         if (option == THROW_DICE) {
-            int dice_value = throw_dice(false);
+            int dice_value = throw_dice(); // throw_dice(false)
             move(&state, dice_value, true);
             quit = is_finished(&state);
         } else if (option == QUIT) {
@@ -119,7 +118,7 @@ void start_game(Board *board) {
     }
 }
 
-Sequence* try_dice_values(State state, int depth);
+//Sequence* try_dice_values(State state, int depth); la he posat a sequence.h
 
 /**
  * TODO: First, checks if the step count reached the max_depth. If so, returns NULL. If there is room for more steps,
@@ -135,7 +134,8 @@ Sequence* try_dice_values(State state, int depth);
  * Post:
  */
 Sequence* do_recursive_move(State state, int dice_value, int depth) {
-    return NULL;
+    // si el valor del dado es posible, se añade el valor a la secuencia (usando add_step_as_first o as_last), sino se vuelve a probar con un valor mas bajo
+    return sequence;
 }
 
 
@@ -149,6 +149,8 @@ Sequence* do_recursive_move(State state, int dice_value, int depth) {
  * Pre:
  * Post:
  */
+
+// probar dados y sino llamar a do_recursive_move (explicado esquema clase online)
 Sequence* try_dice_values(State state, int depth) {
     return NULL;
 }
@@ -163,6 +165,9 @@ Sequence* try_dice_values(State state, int depth) {
  * Post: Prints a sequence that leads to the final square or a message pointing out that
  * no sequence was found before reaching the maximum depth.
  */
+
+
+// nos tiene que dar la sequencia de tiradas necesarias para llegar a X casilla
 void solve(Board *board) {
 
     State state;
