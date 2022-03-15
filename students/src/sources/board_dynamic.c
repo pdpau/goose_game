@@ -17,5 +17,5 @@
  * or if columns is less than 2 or more than MAX_COLUMNS.
  */
 int init_board(Board* board, int rows, int columns) {
-    return ERROR;
+    return ERROR; //copiar l'altre init_board pero "allocating the required space" ????
 }

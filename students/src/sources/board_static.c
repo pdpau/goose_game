@@ -16,14 +16,12 @@ int init_board(Board* board, int rows, int columns) {
     }
 
     // INICIALIZAR Y DIBUJAR CASILLAS
-    //int num_of_squares = rows*columns;
     Square sq;
     int intercambio = 1;
     for (int i = 0; i <= rows; i++) {
         int pos = intercambio;
         while (pos < (intercambio + columns)) {
             init_square(&sq, pos); //??
-            //printf("[%d]", sq.position); //imprimir tablero per pantalla
             pos++;
         }
         intercambio = pos;
