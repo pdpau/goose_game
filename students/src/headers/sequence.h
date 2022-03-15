@@ -16,8 +16,10 @@ typedef struct {
 } Sequence;
 
 void init_sequence(Sequence* sequence); //DONE
+
 void add_step_as_first(Sequence* sequence, int position, int dice_value); //??
 void add_step_as_last(Sequence* sequence, int position, int dice_value); //??
+
 void clear_sequence(Sequence* sequence); //DOING
 void print_sequence(Sequence* sequence); //DOING
 

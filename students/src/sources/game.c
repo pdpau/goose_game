@@ -134,7 +134,32 @@ void start_game(Board *board) {
  * Post:
  */
 Sequence* do_recursive_move(State state, int dice_value, int depth) {
-    // si el valor del dado es posible, se añade el valor a la secuencia (usando add_step_as_first o as_last), sino se vuelve a probar con un valor mas bajo
+    Sequence* sequence;
+    init_sequence(sequence);
+    if (depth == MAX_DEPTH) { // MAX_DEPTH = numero de dados tirados
+        return NULL;
+    }
+    int pos = move(&state, dice_value, false);
+
+    // comprovar move
+    if (pos < ULTIMA_POSICION && pos > 0) {
+        if (sequence->first != NULL) {
+            add_step_as_last(sequence, pos, dice_value);
+        } else {
+            add_step_as_first(sequence, pos, dice_value);
+        }
+        try_dice_values(state, depth+1);
+    } else if (pos == ULTIMA_POSICION) {
+        if (sequence->first != NULL) { // se supone que el primer paso ya esta ocupado porque estamos llegando al final
+            add_step_as_last(sequence, pos, dice_value);
+        } else {
+            add_step_as_first(sequence, pos, dice_value);
+        }
+        return sequence;
+    } else {
+        return NULL; // posicion no valida
+    }
+
     return sequence;
 }
 
@@ -152,6 +177,7 @@ Sequence* do_recursive_move(State state, int dice_value, int depth) {
 
 // probar dados y sino llamar a do_recursive_move (explicado esquema clase online)
 Sequence* try_dice_values(State state, int depth) {
+    do_recursive_move(state, dice_val, depth+1);
     return NULL;
 }
 

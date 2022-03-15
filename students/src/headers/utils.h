@@ -12,12 +12,10 @@
 int read_int_option(const char* msg);
 char read_char_option(const char* msg);
 
-
 void flush_input();
 
 void log_warn(FILE* fd, char* msg);
 void log_error(FILE* fd, char* msg);
 void log_info(FILE* fd, char* msg);
-
 
 #endif //UTILS_H

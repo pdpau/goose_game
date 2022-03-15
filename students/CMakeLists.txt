@@ -23,6 +23,7 @@ add_custom_command(TARGET goose_game_p3_static POST_BUILD
         ${PROJECT_SOURCE_DIR}/resources/
         $<TARGET_FILE_DIR:goose_game_p3_static>/resources/)
 
+
 add_executable(goose_game_p3_dynamic
         src/headers/common.h
         src/headers/board.h

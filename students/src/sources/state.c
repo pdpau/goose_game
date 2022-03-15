@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include "../headers/state.h"
 
-// DONE: Initializes the state, setting the provided playing board and
-//  sets the default values for player count, turn and finished.
 void init_state(State* state, Board* board) {
     state->turn = 0;
     state->finished = false;
@@ -10,16 +8,10 @@ void init_state(State* state, Board* board) {
     state->board = board;
 }
 
-
-// DONE: Returns the player count.
 int get_player_count(State* state) {
     return state->player_count;
 }
 
-// DONE: Adds a player to the state by:
-//  - Checking if it is possible.
-//  - If it is, initializing the next available player.
-//  - Incrementing the player count.
 int add_player(State* state, char symbol) {
     int status = ERROR;
     // Comprovem si es pot afegir un nou jugador
@@ -33,7 +25,6 @@ int add_player(State* state, char symbol) {
     return status;
 }
 
-// DONE: Returns the corresponding player.
 Player* get_player(State* state, int idx) {
     if(idx < 0 || idx >= state->player_count) {
         return NULL;
@@ -41,19 +32,15 @@ Player* get_player(State* state, int idx) {
     return &state->players[idx];
 }
 
-// DONE: Returns the current player, according to the turn.
 Player* get_current_player(State* state) {
     int i = (state->turn) % (state->player_count);
     return &state->players[i];
 }
 
-// DONE: Sets the finished flag to finished value (true or false).
 void set_finished(State* state, bool finished) {
     state->finished = finished;
 }
 
-// DONE: Returns the value of is_finished flag (true or false),
-//  marking a game as finished.
 bool is_finished(State* state) {
     return state->finished;
 }
@@ -88,7 +75,7 @@ int move(State* state, int dice_value, bool print_actions) {
 
     int blocked_turns = get_blocked_turns(player);
     if (blocked_turns > 0) { //si esta bloquejat, treiem un torn al bloc i avancem el torn
-        set_blocked_turns(player, blocked_turns-1);
+        set_blocked_turns(player, blocked_turns - 1);
         state->turn++;
     } else {
         Board* board = state->board;
@@ -159,5 +146,6 @@ int move(State* state, int dice_value, bool print_actions) {
     }
 
     return status;
+    //return get_current_position(player);
 }
 

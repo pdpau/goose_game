@@ -3,17 +3,15 @@
 
 #include "common.h"
 
-// DONE: Create the struct and add the corresponding attributes.
-
-enum square_type {
+typedef enum square_type {
     EMPTY,
     GOOSE,
     DEATH,
     JAIL,
     BRIDGE_LOW,
     BRIDGE_HIGH,
-};
-typedef enum square_type SquareType;
+} SquareType;
+//typedef enum square_type SquareType;
 
 typedef struct {
     int position;

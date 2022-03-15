@@ -97,8 +97,6 @@ int find_square_by_type(Board *board, SquareType type, int starting_position, bo
     }
 }
 
-// TODO: Nothing.
-
 /**
  * Pre: -
  * Post: -

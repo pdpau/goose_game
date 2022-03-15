@@ -7,7 +7,9 @@
 #define SHOW_SEQUENCE 'S'
 #define QUIT 'Q'
 
+
 void start_game(Board* board); //DONE
-void solve(Board* board);
+
+void solve(Board* board); //TODO
 
 #endif //GAME_H
