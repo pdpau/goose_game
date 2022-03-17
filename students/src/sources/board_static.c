@@ -5,14 +5,13 @@
 
 // TODO: Initializes the board, initializing also each square of it.
 int init_board(Board* board, int rows, int columns) {
-    board->rows = rows;
-    board->columns = columns;
-
-    if ((rows < 1) || (rows > MAX_ROWS)) {
+//    board->rows = rows;
+//    board->columns = columns;
+    if ((rows < 1) || (rows > MAX_ROWS) || (columns < 2) || (columns > MAX_COLUMNS)) {
         return ERROR;
-    }
-    if ((columns < 2) || (columns > MAX_COLUMNS)) {
-        return ERROR;
+    } else {
+        set_rows(board, rows);
+        set_columns(board, columns);
     }
 
     // INICIALIZAR Y DIBUJAR CASILLAS

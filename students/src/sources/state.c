@@ -108,7 +108,7 @@ int move(State* state, int dice_value, bool print_actions) {
                 set_current_position(player, pos);
             } else if (type == BRIDGE_LOW) {
                 // ir al puente de arriba
-                int pos = find_square_by_type(board, BRIDGE_LOW, current_position, false);
+                int pos = find_square_by_type(board, BRIDGE_HIGH, current_position, false);
                 if (print_actions == true) {
                     printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), get_position(pos));
                     // print del BRIDGE EFFECT
@@ -116,7 +116,7 @@ int move(State* state, int dice_value, bool print_actions) {
                 set_current_position(player, pos);
             } else if (type == BRIDGE_HIGH) {
                 // ir al puente de abajo (reverse = true)
-                int pos = find_square_by_type(board, BRIDGE_HIGH, current_position, true);
+                int pos = find_square_by_type(board, BRIDGE_LOW, current_position, true);
                 if (print_actions == true) {
                     printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), get_position(pos));
                     // print del BRIDGE EFFECT

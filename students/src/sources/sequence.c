@@ -32,6 +32,7 @@ void add_step_as_first(Sequence* sequence, int position, int dice_value) {
     Step* step = (Step*) malloc(sizeof(Step));
     step->position = position;
     step->dice_value = dice_value;
+    step->next = sequence->first; //en vez de NULL sequence->first
     sequence->first = step;
     sequence->size++;
 }
@@ -51,7 +52,9 @@ void add_step_as_last(Sequence* sequence, int position, int dice_value) {
     Step* step = (Step*) malloc(sizeof(Step));
     step->position = position;
     step->dice_value = dice_value;
-    sequence->last = step;
+    step->next = NULL;
+    sequence->last->next = step;
+    sequence->last = step; // borrar??
     sequence->size++;
 }
 
@@ -66,6 +69,7 @@ void add_step_as_last(Sequence* sequence, int position, int dice_value) {
 void clear_sequence(Sequence* sequence) {
     Step* step = sequence->first;
     for (int i = 0; i < sequence->size; i++) {
+        Step* step = sequence->first;
         free(sequence->first);
         sequence->first = step->next;
     }
@@ -82,7 +86,7 @@ void clear_sequence(Sequence* sequence) {
 void print_sequence(Sequence* sequence) {
     Step* step = sequence->first;
     for (int i = 0; i < sequence->size; i++) {
-        printf("%c",step); // no se si "step" és char o int...
+        printf("%d", step->dice_value);
         step = step->next;
     }
 }

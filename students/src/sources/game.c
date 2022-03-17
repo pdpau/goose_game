@@ -134,31 +134,47 @@ void start_game(Board *board) {
  * Post:
  */
 Sequence* do_recursive_move(State state, int dice_value, int depth) {
-    Sequence* sequence;
-    init_sequence(sequence);
-    if (depth == MAX_DEPTH) { // MAX_DEPTH = numero de dados tirados
-        return NULL;
-    }
-    int pos = move(&state, dice_value, false);
+//    if (depth == MAX_DEPTH) { // MAX_DEPTH = numero de dados tirados
+//        return NULL;
+//    }
+    int last_position = (get_rows(state.board))*(get_columns(state.board));
 
-    // comprovar move
-    if (pos < ULTIMA_POSICION && pos > 0) {
-        if (sequence->first != NULL) {
-            add_step_as_last(sequence, pos, dice_value);
-        } else {
-            add_step_as_first(sequence, pos, dice_value);
-        }
-        try_dice_values(state, depth+1);
-    } else if (pos == ULTIMA_POSICION) {
-        if (sequence->first != NULL) { // se supone que el primer paso ya esta ocupado porque estamos llegando al final
-            add_step_as_last(sequence, pos, dice_value);
-        } else {
-            add_step_as_first(sequence, pos, dice_value);
-        }
-        return sequence;
+    move(&state, dice_value, false);
+
+    Sequence* sequence = NULL;
+    if (is_finished(&state)){ // partida acabada
+        sequence = (Sequence*) malloc(sizeof(Sequence));
+        init_sequence(sequence);
+    } else if (depth == MAX_DEPTH){
+        //return NULL;
     } else {
-        return NULL; // posicion no valida
+        sequence = try_dice_values(state, depth+1); //, MAX_DEPTH);
     }
+
+    if (sequence != NULL) {
+        Player* player = get_current_player(&state);
+        int pos = get_current_position(player);
+        // add_step_as_first(sequence, pos, dice_value);
+        if (pos < last_position && pos > 0) {
+            if (sequence->first != NULL) {
+                add_step_as_last(sequence, pos, dice_value);
+            } else {
+                add_step_as_first(sequence, pos, dice_value);
+            }
+            //try_dice_values(state, depth+1);
+        } else if (pos == last_position) {
+            if (sequence->first != NULL) { // se supone que el primer paso ya esta ocupado porque estamos llegando al final
+                add_step_as_last(sequence, pos, dice_value);
+            } else {
+                add_step_as_first(sequence, pos, dice_value);
+            }
+            return sequence;
+        } else {
+            return NULL; // posicion no valida
+        }
+    }
+
+
 
     return sequence;
 }
@@ -175,10 +191,24 @@ Sequence* do_recursive_move(State state, int dice_value, int depth) {
  * Post:
  */
 
-// probar dados y sino llamar a do_recursive_move (explicado esquema clase online)
 Sequence* try_dice_values(State state, int depth) {
-    do_recursive_move(state, dice_val, depth+1);
-    return NULL;
+    Sequence* seq = NULL;
+    Sequence* best_seq = NULL;
+//    seq = (Sequence*) malloc(sizeof(Sequence));
+//    best_seq = (Sequence*) malloc(sizeof(Sequence));
+    init_sequence(best_seq);
+    best_seq->size = 100; // comencem amb un valor molt alt perque la primera secuencia ja la sobreescrigui
+
+    int i = 1;
+    while (i <= 6) {
+        seq = do_recursive_move(state, i, depth);
+        if (seq->size < best_seq->size) {
+            best_seq = seq;
+        }
+        i++;
+    }
+    // devolver la secuencia con menos pasos
+    return best_seq;
 }
 
 /**
@@ -194,7 +224,7 @@ Sequence* try_dice_values(State state, int depth) {
 
 
 // nos tiene que dar la sequencia de tiradas necesarias para llegar a X casilla
-void solve(Board *board) {
+void solve(Board *board) { // hay que añadir una opcion al menu que resuelva el tablero
 
     State state;
     init_state(&state, board);
@@ -209,3 +239,8 @@ void solve(Board *board) {
         clear_sequence(sequence);
     }
 }
+
+
+// apuntes
+
+// https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/
