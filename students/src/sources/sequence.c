@@ -67,7 +67,6 @@ void add_step_as_last(Sequence* sequence, int position, int dice_value) {
  * Post:
  */
 void clear_sequence(Sequence* sequence) {
-    Step* step = sequence->first;
     for (int i = 0; i < sequence->size; i++) {
         Step* step = sequence->first;
         free(sequence->first);
