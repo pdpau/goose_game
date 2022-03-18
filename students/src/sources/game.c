@@ -134,25 +134,28 @@ void start_game(Board *board) {
  * Post:
  */
 Sequence* do_recursive_move(State state, int dice_value, int depth) {
-//    if (depth == MAX_DEPTH) { // MAX_DEPTH = numero de dados tirados
-//        return NULL;
-//    }
-    int last_position = (get_rows(state.board))*(get_columns(state.board));
+    if (depth >= MAX_DEPTH) { // MAX_DEPTH = numero de dados tirados
+        return NULL;
+    }
+    int last_position = get_size(state.board);
 
     move(&state, dice_value, false);
 
-    Sequence* sequence = NULL;
+    Sequence* sequence;
     if (is_finished(&state)) { // partida acabada
         sequence = (Sequence*) malloc(sizeof(Sequence));
         init_sequence(sequence);
-    } else if (depth == MAX_DEPTH) {
-        //return NULL;
     } else {
         sequence = try_dice_values(state, depth+1); //, MAX_DEPTH);
     }
 
     if (sequence != NULL) {
         Player* player = get_current_player(&state);
+        if (player == NULL) {
+            printf("ERROR: Problem with get_current_player()\n");
+            return NULL;
+        }
+
         int pos = get_current_position(player);
         // add_step_as_first(sequence, pos, dice_value);
         if (pos < last_position && pos > 0) {
@@ -161,7 +164,6 @@ Sequence* do_recursive_move(State state, int dice_value, int depth) {
             } else {
                 add_step_as_first(sequence, pos, dice_value);
             }
-            //try_dice_values(state, depth+1);
         } else if (pos == last_position) {
             if (sequence->first != NULL) { // se supone que el primer paso ya esta ocupado porque estamos llegando al final
                 add_step_as_last(sequence, pos, dice_value);
@@ -173,8 +175,6 @@ Sequence* do_recursive_move(State state, int dice_value, int depth) {
             return NULL; // posicion no valida
         }
     }
-
-
 
     return sequence;
 }

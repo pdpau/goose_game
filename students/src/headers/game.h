@@ -1,7 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "board_static.h"
+#include "board_dynamic.h"
 
 #define THROW_DICE 'T'
 #define SHOW_SEQUENCE 'S'

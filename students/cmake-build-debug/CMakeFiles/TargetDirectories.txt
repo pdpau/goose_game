@@ -1,4 +1,3 @@
-C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/CMakeFiles/goose_game_p3_static.dir
 C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/CMakeFiles/goose_game_p3_dynamic.dir
+C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/CMakeFiles/rebuild_cache.dir

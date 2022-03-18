@@ -46,6 +46,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/goose_game_p3_static.dir/DependInfo.cmake"
   "CMakeFiles/goose_game_p3_dynamic.dir/DependInfo.cmake"
   )

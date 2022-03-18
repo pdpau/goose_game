@@ -3,10 +3,10 @@
 
 #include "board.h"
 
-typedef struct board {
+struct board {
     Square *squares;
     int rows;
     int columns;
-} Board;
+};
 
 #endif //BOARD_DYNAMIC_H
