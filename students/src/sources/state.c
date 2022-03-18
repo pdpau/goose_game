@@ -77,75 +77,85 @@ int move(State* state, int dice_value, bool print_actions) {
     if (blocked_turns > 0) { //si esta bloquejat, treiem un torn al bloc i avancem el torn
         set_blocked_turns(player, blocked_turns - 1);
         state->turn++;
+        if(print_actions) {
+            printf("BLOCKED: Player %c must be still, wait %d more turn.\n", get_symbol(player), blocked_turns);
+        }
+        return SUCCESS;
+    }
+    Board* board = state->board;
+    int board_size = get_size(board);
+    int current_position = get_current_position(player);
+
+    int new_position = current_position + dice_value;
+    if (new_position == board_size - 1) { // aquí comprovem si s'ha arribat al final del taulell
+        set_finished(state, true);
+        set_current_position(player, new_position);
     } else {
-        Board* board = state->board;
-        int board_size = get_size(board);
-        int current_position = get_current_position(player);
+        if (new_position >= board_size) {
+            int last_idx = board_size - 1;
+            new_position = last_idx - (new_position % last_idx);
+            printf("Llegaste a la ultima casilla y volviste atrás!\n");
+        }
+        set_current_position(player, new_position);
 
-        current_position += dice_value;
-        if (current_position == board_size - 1) { // aquí comprovem si s'ha arribat al final del taulell
-            set_finished(state, true);
-            set_current_position(player, current_position);
-        } else {
-            if (current_position >= board_size) {
-                int last_idx = board_size - 1;
-                current_position = last_idx - (current_position % last_idx);
-                printf("Llegaste a la ultima casilla y volviste atrás!\n");
+        // obtenim la casella que hi ha en la posició current_position i el seu tipus
+        Square* current_square = get_square_at(board, new_position);
+        SquareType type = get_type(current_square);
+        if (type == EMPTY) {
+            if (print_actions == true) {
+                printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), get_position(current_square));
             }
-            set_current_position(player, current_position);
+            set_current_position(player, get_position(current_square));
+            state->turn++;
 
-            // obtenim la casella que hi ha en la posició current_position i el seu tipus
-            Square* current_square = get_square_at(board, current_position);
-            SquareType type = get_type(current_square);
-            if (type == GOOSE) {
-                // si es la ultima oca vuelve para atras?????
+        } else if (type == GOOSE) {
                 //posicion de la siguiente oca
-                int pos = find_square_by_type(board, GOOSE, current_position, false);
+                int pos = find_square_by_type(board, GOOSE, new_position, false);
                 if (print_actions == true) {
-                    printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), get_position(pos));
+                    printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), pos);
                     // print del GOOSE EFFECT
                 }
                 set_current_position(player, pos);
-            } else if (type == BRIDGE_LOW) {
-                // ir al puente de arriba
-                int pos = find_square_by_type(board, BRIDGE_HIGH, current_position, false);
-                if (print_actions == true) {
-                    printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), get_position(pos));
-                    // print del BRIDGE EFFECT
-                }
-                set_current_position(player, pos);
-            } else if (type == BRIDGE_HIGH) {
-                // ir al puente de abajo (reverse = true)
-                int pos = find_square_by_type(board, BRIDGE_LOW, current_position, true);
-                if (print_actions == true) {
-                    printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), get_position(pos));
-                    // print del BRIDGE EFFECT
-                }
-                set_current_position(player, pos);
-            } else if (type == JAIL) {
-                // perder 1 turno
-                if (print_actions == true) {
-                    printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), get_current_position(player));
-                    printf("JAIL: Block player during %d turns.\n", BLOCKED_JAIL);
-                }
-                set_blocked_turns(player, BLOCKED_JAIL);
-            } else if (type == DEATH) {
-                // volver al inicio
-                if (print_actions == true) {
-                    printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), 1);
-                    printf("DEATH: Player dies and go to %d position.\n", 1);
-                }
-                set_current_position(player, 1);
-            } else if (type == EMPTY) {
-                if (print_actions == true) {
-                    printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), get_position(current_square));
-                }
+
+        } else if (type == BRIDGE_LOW) {
+            // ir al puente de arriba
+            int pos = find_square_by_type(board, BRIDGE_HIGH, new_position, false);
+            if (print_actions == true) {
+                printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), pos);
+                // print del BRIDGE EFFECT
             }
+            set_current_position(player, pos);
+
+        } else if (type == BRIDGE_HIGH) {
+            // ir al puente de abajo (reverse = true)
+            int pos = find_square_by_type(board, BRIDGE_LOW, new_position, true);
+            if (print_actions == true) {
+                printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), pos);
+                // print del BRIDGE EFFECT
+            }
+            set_current_position(player, pos);
+
+        } else if (type == JAIL) {
+            // perder 1 turno
+            if (print_actions == true) {
+                printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), get_current_position(player));
+                printf("JAIL: Block player during %d turns.\n", BLOCKED_JAIL);
+            }
+            set_blocked_turns(player, BLOCKED_JAIL);
+
+        } else if (type == DEATH) {
+            // volver al inicio
+            if (print_actions == true) {
+                printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), 1);
+                printf("DEATH: Player dies and go to %d position.\n", 1);
+            }
+            set_current_position(player, INITIAL_POSITION);
         }
     }
 
-    Square* last_sq = get_square_at(state->board, get_current_position(player));
-    if (get_position(last_sq) == get_size(state->board)) {
+
+    Square* last_sq = get_square_at(board, get_current_position(player));
+    if (get_position(last_sq) == get_size(board)) {
         set_finished(state, true);
     }
 
