@@ -136,6 +136,10 @@ int move(State* state, int dice_value, bool print_actions) {
                     printf("DEATH: Player dies and go to %d position.\n", 1);
                 }
                 set_current_position(player, 1);
+            } else if (type == EMPTY) {
+                if (print_actions == true) {
+                    printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), get_position(current_square));
+                }
             }
         }
     }

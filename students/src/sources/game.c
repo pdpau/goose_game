@@ -142,10 +142,10 @@ Sequence* do_recursive_move(State state, int dice_value, int depth) {
     move(&state, dice_value, false);
 
     Sequence* sequence = NULL;
-    if (is_finished(&state)){ // partida acabada
+    if (is_finished(&state)) { // partida acabada
         sequence = (Sequence*) malloc(sizeof(Sequence));
         init_sequence(sequence);
-    } else if (depth == MAX_DEPTH){
+    } else if (depth == MAX_DEPTH) {
         //return NULL;
     } else {
         sequence = try_dice_values(state, depth+1); //, MAX_DEPTH);
@@ -181,7 +181,7 @@ Sequence* do_recursive_move(State state, int dice_value, int depth) {
 
 
 /**
- * TODO: Given a state, calls do_recursive_move with each dice value looking for sequences that leads to the final square.
+ * DONE: Given a state, calls do_recursive_move with each dice value looking for sequences that leads to the final square.
  * For each resulting sequence, it returns the shortest one.
  *
  * @param state The state to move from.
@@ -192,20 +192,14 @@ Sequence* do_recursive_move(State state, int dice_value, int depth) {
  */
 
 Sequence* try_dice_values(State state, int depth) {
-    Sequence* seq = NULL;
     Sequence* best_seq = NULL;
-//    seq = (Sequence*) malloc(sizeof(Sequence));
-//    best_seq = (Sequence*) malloc(sizeof(Sequence));
-    init_sequence(best_seq);
-    best_seq->size = 100; // comencem amb un valor molt alt perque la primera secuencia ja la sobreescrigui
 
-    int i = 1;
-    while (i <= 6) {
-        seq = do_recursive_move(state, i, depth);
-        if (seq->size < best_seq->size) {
+    for (int i = 1; i <= 6; i++) {
+        Sequence* seq = do_recursive_move(state, i, depth);
+        if (seq != NULL && ((best_seq == NULL) || (seq->size < best_seq->size))) {
+            clear_sequence(best_seq);
             best_seq = seq;
         }
-        i++;
     }
     // devolver la secuencia con menos pasos
     return best_seq;

@@ -54,7 +54,7 @@ void add_step_as_last(Sequence* sequence, int position, int dice_value) {
     step->dice_value = dice_value;
     step->next = NULL;
     sequence->last->next = step;
-    sequence->last = step; // borrar??
+    sequence->last = step; //??
     sequence->size++;
 }
 
@@ -72,6 +72,7 @@ void clear_sequence(Sequence* sequence) {
         free(sequence->first);
         sequence->first = step->next;
     }
+    //init_sequence(sequence);
 }
 
 /**
@@ -85,7 +86,7 @@ void clear_sequence(Sequence* sequence) {
 void print_sequence(Sequence* sequence) {
     Step* step = sequence->first;
     for (int i = 0; i < sequence->size; i++) {
-        printf("%d", step->dice_value);
+        printf("Value: %d, Position: %d\n", step->dice_value);
         step = step->next;
     }
 }
