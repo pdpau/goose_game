@@ -66,6 +66,8 @@ bool is_finished(State* state) {
  * @param print_actions Flag to enable/disable printing messages.
  * @return ERROR if the move ends in an invalid state, SUCCESS otherwise.
  */
+
+// TODO: revisar los prints de cada casilla
 int move(State* state, int dice_value, bool print_actions) {
     int status = SUCCESS;
     Player* player = get_current_player(state);
@@ -77,7 +79,7 @@ int move(State* state, int dice_value, bool print_actions) {
     if (blocked_turns > 0) { //si esta bloquejat, treiem un torn al bloc i avancem el torn
         set_blocked_turns(player, blocked_turns - 1);
         state->turn++;
-        if(print_actions) {
+        if (print_actions) {
             printf("BLOCKED: Player %c must be still, wait %d more turn.\n", get_symbol(player), blocked_turns);
         }
         return SUCCESS;
@@ -87,12 +89,13 @@ int move(State* state, int dice_value, bool print_actions) {
     int current_position = get_current_position(player);
 
     int new_position = current_position + dice_value;
-    if (new_position == board_size - 1) { // aquí comprovem si s'ha arribat al final del taulell
+    if (new_position == board_size) { // aquí comprovem si s'ha arribat al final del taulell
         set_finished(state, true);
         set_current_position(player, new_position);
     } else {
         if (new_position >= board_size) {
-            int last_idx = board_size - 1;
+            // int last_idx = board_size - 1;
+            int last_idx = board_size; // sin -1 ???
             new_position = last_idx - (new_position % last_idx);
             printf("Llegaste a la ultima casilla y volviste atrás!\n");
         }

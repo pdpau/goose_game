@@ -102,7 +102,8 @@ void start_game(Board *board) {
         char option = show_game_options();
         if (option == THROW_DICE) {
             int dice_value = throw_dice(); // throw_dice(false)
-            move(&state, dice_value, true);
+            printf("Dice value: %d\n", dice_value);
+            move(&state, dice_value, false);
             quit = is_finished(&state);
         } else if (option == QUIT) {
             quit = true;
@@ -218,7 +219,7 @@ Sequence* try_dice_values(State state, int depth) {
 
 
 // nos tiene que dar la sequencia de tiradas necesarias para llegar a X casilla
-void solve(Board *board) { // hay que añadir una opcion al menu que resuelva el tablero
+void solve(Board *board) {
 
     State state;
     init_state(&state, board);
@@ -231,6 +232,7 @@ void solve(Board *board) { // hay que añadir una opcion al menu que resuelva el
         printf("Solution:\n");
         print_sequence(sequence);
         clear_sequence(sequence);
+        free(sequence); // ??
     }
 }
 
