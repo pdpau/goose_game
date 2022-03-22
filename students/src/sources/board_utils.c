@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #include "../headers/board_utils.h"
 
@@ -11,6 +12,26 @@
 #define RIGHT_TOP_SQUARE 5
 #define LEFT_FINAL_SQUARE 6
 #define RIGHT_FINAL_SQUARE 7
+
+// ??
+
+void** malloc_matrix(size_t rows, size_t columns, size_t cell_size) {
+    void** mat = (void**) malloc(sizeof(void*) * rows);
+    for (size_t r = 0; r < rows; r++) {
+        mat[r] = (void*) malloc(cell_size * columns);
+    }
+    return mat;
+}
+
+void free_matrix(size_t rows, void** mat) {
+    for (size_t r = 0; r < rows; r++) {
+        free(mat[r]);
+    }
+    free(mat);
+}
+
+// ??
+
 
 typedef struct {
     Square* square;
@@ -137,12 +158,13 @@ void draw_square(FILE* fd, BoardSquare* square, int line) {
     }
 }
 
-void draw_board(FILE* fd, BoardSquare* matrix, int rows, int columns) {
+void draw_board(FILE* fd, BoardSquare** matrix, int rows, int columns) {
 
     for (int idx=0; idx<rows; idx++) {
         for (int line=0; line<4; line++) {
             for (int jdx = 0; jdx < columns; jdx++) {
-                BoardSquare* square = &(matrix[idx*columns + jdx]);
+                //BoardSquare* square = &(matrix[idx*columns + jdx]); // TODO: revisar
+                BoardSquare* square = &matrix[idx][jdx];
 
                 draw_square(fd, square, line);
                 fprintf(fd, " ");
@@ -158,7 +180,8 @@ void draw_zigzag_board(FILE* fd, State* state) {
     Board* board = state->board;
     int rows = get_rows(board);
     int columns = get_columns(board);
-    BoardSquare matrix[rows][columns];
+    // BoardSquare matrix[rows][columns];
+    BoardSquare** matrix = (BoardSquare**) malloc_matrix(rows, columns, sizeof(BoardSquare));
 
     int row = rows-1;
     int column = 0;
@@ -224,8 +247,10 @@ void draw_zigzag_board(FILE* fd, State* state) {
             *space = symbol;
         }
     }
+    //draw_board(fd, (BoardSquare *) matrix, rows, columns);
+    draw_board(fd, matrix, rows, columns);
 
-    draw_board(fd, (BoardSquare *) matrix, rows, columns);
+    free_matrix(rows, (void**) matrix);
 }
 
 /**

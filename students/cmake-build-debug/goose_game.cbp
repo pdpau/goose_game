@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug"/>
+				<Option working_dir="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="goose_game_p3_dynamic">
-				<Option output="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/goose_game_p3_dynamic.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug"/>
+				<Option output="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/goose_game_p3_dynamic.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -30,15 +30,15 @@
 					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 goose_game_p3_dynamic"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 goose_game_p3_dynamic"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="goose_game_p3_dynamic/fast">
-				<Option output="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/goose_game_p3_dynamic.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug"/>
+				<Option output="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/goose_game_p3_dynamic.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -49,103 +49,103 @@
 					<Add directory="C:/Program Files/JetBrains/CLion 2021.3.2/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 goose_game_p3_dynamic/fast"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 goose_game_p3_dynamic/fast"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug"/>
+				<Option working_dir="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug"/>
+				<Option working_dir="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/headers/board.h">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/headers/board.h">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/headers/board_dynamic.h">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/headers/board_dynamic.h">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/headers/board_utils.h">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/headers/board_utils.h">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/headers/common.h">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/headers/common.h">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/headers/file_manager.h">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/headers/file_manager.h">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/headers/game.h">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/headers/game.h">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/headers/menu.h">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/headers/menu.h">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/headers/player.h">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/headers/player.h">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/headers/sequence.h">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/headers/sequence.h">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/headers/square.h">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/headers/square.h">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/headers/state.h">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/headers/state.h">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/headers/utils.h">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/headers/utils.h">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/sources/board_dynamic.c">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/sources/board_dynamic.c">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/sources/board_utils.c">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/sources/board_utils.c">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/sources/file_manager.c">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/sources/file_manager.c">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/sources/game.c">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/sources/game.c">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/sources/main.c">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/sources/main.c">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/sources/menu.c">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/sources/menu.c">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/sources/player.c">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/sources/player.c">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/sources/sequence.c">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/sources/sequence.c">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/sources/square.c">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/sources/square.c">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/sources/state.c">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/sources/state.c">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/src/sources/utils.c">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/src/sources/utils.c">
 			<Option target="goose_game_p3_dynamic"/>
 		</Unit>
-		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game_p2/students/CMakeLists.txt">
+		<Unit filename="C:/Users/pdpau/Google Drive/2. Uni/1r Curs/2n Trimestre/Estructures de Dades i Algorismes I/Practica/goose_game/students/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

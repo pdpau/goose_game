@@ -53,10 +53,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.3.2\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\pdpau\Google Drive\2. Uni\1r Curs\2n Trimestre\Estructures de Dades i Algorismes I\Practica\goose_game_p2\students"
+CMAKE_SOURCE_DIR = "C:\Users\pdpau\Google Drive\2. Uni\1r Curs\2n Trimestre\Estructures de Dades i Algorismes I\Practica\goose_game\students"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\pdpau\Google Drive\2. Uni\1r Curs\2n Trimestre\Estructures de Dades i Algorismes I\Practica\goose_game_p2\students\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\pdpau\Google Drive\2. Uni\1r Curs\2n Trimestre\Estructures de Dades i Algorismes I\Practica\goose_game\students\cmake-build-debug"
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -80,14 +80,14 @@ clean: CMakeFiles/goose_game_p3_dynamic.dir/clean
 CMakeFiles/goose_game_p3_dynamic.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\goose_game_p3_dynamic.dir\build.make CMakeFiles/goose_game_p3_dynamic.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\pdpau\Google Drive\2. Uni\1r Curs\2n Trimestre\Estructures de Dades i Algorismes I\Practica\goose_game_p2\students\cmake-build-debug\CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target goose_game_p3_dynamic"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\pdpau\Google Drive\2. Uni\1r Curs\2n Trimestre\Estructures de Dades i Algorismes I\Practica\goose_game\students\cmake-build-debug\CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target goose_game_p3_dynamic"
 .PHONY : CMakeFiles/goose_game_p3_dynamic.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/goose_game_p3_dynamic.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\pdpau\Google Drive\2. Uni\1r Curs\2n Trimestre\Estructures de Dades i Algorismes I\Practica\goose_game_p2\students\cmake-build-debug\CMakeFiles" 12
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\pdpau\Google Drive\2. Uni\1r Curs\2n Trimestre\Estructures de Dades i Algorismes I\Practica\goose_game\students\cmake-build-debug\CMakeFiles" 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/goose_game_p3_dynamic.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\pdpau\Google Drive\2. Uni\1r Curs\2n Trimestre\Estructures de Dades i Algorismes I\Practica\goose_game_p2\students\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\pdpau\Google Drive\2. Uni\1r Curs\2n Trimestre\Estructures de Dades i Algorismes I\Practica\goose_game\students\cmake-build-debug\CMakeFiles" 0
 .PHONY : CMakeFiles/goose_game_p3_dynamic.dir/rule
 
 # Convenience name for target.

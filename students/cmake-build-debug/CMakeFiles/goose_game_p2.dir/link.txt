@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2021.3.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\goose_game_p2.dir/objects.a
-C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\ar.exe qc CMakeFiles\goose_game_p2.dir/objects.a @CMakeFiles\goose_game_p2.dir\objects1.rsp
-C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\gcc.exe  -std=c11 -Wall -g -Wl,--whole-archive CMakeFiles\goose_game_p2.dir/objects.a -Wl,--no-whole-archive -o goose_game_p2.exe -Wl,--out-implib,libgoose_game_p2.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\goose_game_p2.dir\linklibs.rsp
