@@ -86,7 +86,7 @@ void clear_sequence(Sequence* sequence) {
 void print_sequence(Sequence* sequence) {
     Step* step = sequence->first;
     for (int i = 0; i < sequence->size; i++) {
-        printf("Value: %d, Position: %d\n", step->dice_value);
+        printf("Value: %d, Position: %d\n", step->dice_value, step->position);
         step = step->next;
     }
 }

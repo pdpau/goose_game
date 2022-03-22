@@ -3,6 +3,7 @@
 
 #define OPTION_LOAD 1
 #define OPTION_EMPTY 2
+#define OPTION_SOLVE 3
 #define OPTION_QUIT 0
 
 #define OPTION_LOAD_DEFAULT_MINIMAL 1

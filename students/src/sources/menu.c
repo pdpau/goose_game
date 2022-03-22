@@ -132,6 +132,7 @@ void show_menu() {
         printf("\n");
         printf( "%d. Load board configuration\n",  OPTION_LOAD);
         printf( "%d. Show empty board\n",  OPTION_EMPTY);
+        printf("%d: Solve the board\n", OPTION_SOLVE);
         printf( "%d. Quit\n", OPTION_QUIT);
         option = read_int_option("Choose an option: \n");
 
@@ -157,6 +158,8 @@ void show_menu() {
             } else {
                 printf("The initialization was unsuccessful...\n");
             }
+        } else if (option == OPTION_SOLVE) {
+            //solve(&board) ???
         } else {
             printf("Invalid option!\n");
         }
