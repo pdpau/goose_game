@@ -89,13 +89,12 @@ int move(State* state, int dice_value, bool print_actions) {
     int current_position = get_current_position(player);
 
     int new_position = current_position + dice_value;
-    if (new_position == board_size) { // aquí comprovem si s'ha arribat al final del taulell
-        set_finished(state, true);
+    if (new_position == board_size-1) { // aquí comprovem si s'ha arribat al final del taulell
         set_current_position(player, new_position);
+        set_finished(state, true);
     } else {
         if (new_position >= board_size) {
-            // int last_idx = board_size - 1;
-            int last_idx = board_size; // sin -1 ???
+            int last_idx = board_size - 1;
             new_position = last_idx - (new_position % last_idx);
             printf("Llegaste a la ultima casilla y volviste atrás!\n");
         }
@@ -145,14 +144,16 @@ int move(State* state, int dice_value, bool print_actions) {
                 printf("JAIL: Block player during %d turns.\n", BLOCKED_JAIL);
             }
             set_blocked_turns(player, BLOCKED_JAIL);
+            state->turn++;
 
         } else if (type == DEATH) {
             // volver al inicio
             if (print_actions == true) {
                 printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), 1);
-                printf("DEATH: Player dies and go to %d position.\n", 1);
+                printf("DEATH: Player dies and go to position %d.\n", 0);
             }
             set_current_position(player, INITIAL_POSITION);
+            state->turn++;
         }
     }
 

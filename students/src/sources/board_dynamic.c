@@ -24,7 +24,7 @@ int init_board(Board* board, int rows, int columns) {
 //        }
 //    }
     for (int i = 0; i < rows*columns; i++) {
-        init_square(&board->squares[i], i+1); // comencem a la posició 1
+        init_square(&board->squares[i], i); // comencem a la posició 0
     }
 
     return SUCCESS;

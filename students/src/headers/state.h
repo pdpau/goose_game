@@ -7,7 +7,7 @@
 
 #define MAX_PLAYERS 3
 #define BLOCKED_JAIL 1
-#define INITIAL_POSITION 1
+#define INITIAL_POSITION 0
 
 typedef struct {
     Board* board;
