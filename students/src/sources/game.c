@@ -160,16 +160,16 @@ Sequence* do_recursive_move(State state, int dice_value, int depth) {
         int pos = get_current_position(player);
         // add_step_as_first(sequence, pos, dice_value);
         if (pos < last_position && pos > 0) {
-            if (sequence->first != NULL) {
-                add_step_as_last(sequence, pos, dice_value);
-            } else {
+            if (sequence->first == NULL) {
                 add_step_as_first(sequence, pos, dice_value);
+            } else {
+                add_step_as_last(sequence, pos, dice_value);
             }
         } else if (pos == last_position) {
-            if (sequence->first != NULL) { // se supone que el primer paso ya esta ocupado porque estamos llegando al final
-                add_step_as_last(sequence, pos, dice_value);
-            } else {
+            if (sequence->first == NULL) { // se supone que el primer paso ya esta ocupado porque estamos llegando al final
                 add_step_as_first(sequence, pos, dice_value);
+            } else {
+                add_step_as_last(sequence, pos, dice_value);
             }
             return sequence;
         } else {
@@ -198,7 +198,10 @@ Sequence* try_dice_values(State state, int depth) {
     for (int i = 1; i <= 6; i++) {
         Sequence* seq = do_recursive_move(state, i, depth);
         if (seq != NULL && ((best_seq == NULL) || (seq->size < best_seq->size))) {
-            clear_sequence(best_seq);
+            if (best_seq != NULL) {
+                clear_sequence(best_seq);
+                free(best_seq);
+            }
             best_seq = seq;
         }
     }
