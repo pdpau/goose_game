@@ -36,7 +36,7 @@ char show_game_options() {
 //}
 
 int throw_dice() { // throw_dice(bool with_rolling)
-    int value = (rand() % 6) + 1;
+    int value = rand()%6+1;
 //    if (with_rolling) {
 //        int iterations = 0;
 //        bool keypressed = false;

@@ -113,11 +113,15 @@ int move(State* state, int dice_value, bool print_actions) {
         } else if (type == GOOSE) {
                 //posicion de la siguiente oca
                 int pos = find_square_by_type(board, GOOSE, new_position, false);
-                if (print_actions == true) {
-                    printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), pos);
-                    // print del GOOSE EFFECT
+                if (pos != -1) {
+                    if (print_actions == true) {
+                        printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), pos);
+                        // print del GOOSE EFFECT
+                    }
+                    set_current_position(player, pos);
+                } else { // si caes en la ultima oca te quedas ahi pero sigues tirando
+                    set_current_position(player, get_position(current_square));
                 }
-                set_current_position(player, pos);
 
         } else if (type == BRIDGE_LOW) {
             // ir al puente de arriba
