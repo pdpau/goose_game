@@ -17,18 +17,18 @@ typedef struct {
     bool finished;
 } State;
 
-void init_state(State* state, Board* board); //DONE
+void init_state(State* state, Board* board);
 
-int get_player_count(State* state); //DONE
+int get_player_count(State* state);
 
-int add_player(State* state, char symbol); //DONE
-Player* get_player(State* state, int idx); //DONE
-Player* get_current_player(State* state); //DONE
+int add_player(State* state, char symbol);
+Player* get_player(State* state, int idx);
+Player* get_current_player(State* state);
 
-bool is_finished(State* state); //DONE
-void set_finished(State* state, bool finished); //DONE
+bool is_finished(State* state);
+void set_finished(State* state, bool finished);
 
-int move(State* state, int dice_value, bool print_actions); //DOING
+int move(State* state, int dice_value, bool print_actions);
 
 
 #endif //STATE_H

@@ -7,14 +7,14 @@ typedef struct {
     int blocked_turns;
 } Player;
 
-void init_player(Player* player, char symbol); //DONE
+void init_player(Player* player, char symbol);
 
-char get_symbol(Player* player); //DONE
+char get_symbol(Player* player);
 
-int get_current_position(Player* state); //DONE
-void set_current_position(Player* state, int position); //DONE
+int get_current_position(Player* state);
+void set_current_position(Player* state, int position);
 
-int get_blocked_turns(Player* player); //DONE
-void set_blocked_turns(Player* player, int turns); //DONE
+int get_blocked_turns(Player* player);
+void set_blocked_turns(Player* player, int turns);
 
 #endif //PLAYER_H

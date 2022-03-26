@@ -8,8 +8,8 @@
 #define QUIT 'Q'
 
 
-void start_game(Board* board); //DONE
+void start_game(Board* board);
 
-void solve(Board* board); //TODO
+void solve(Board* board);
 
 #endif //GAME_H

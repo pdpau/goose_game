@@ -12,18 +12,18 @@
 
 typedef struct board Board;
 
-int init_board(Board* board, int rows, int columns); //DONE but REVISAR
+int init_board(Board* board, int rows, int columns);
 
-int get_rows(Board* board); //DONE
-void set_rows(Board* board, int size); //DONE
+int get_rows(Board* board);
+void set_rows(Board* board, int size);
 
-int get_columns(Board* board); //DONE
-void set_columns(Board* board, int size); //DONE
+int get_columns(Board* board);
+void set_columns(Board* board, int size);
 
-int get_size(Board* board); //DONE
+int get_size(Board* board);
 
-Square* get_square_at(Board* board, int position); //DONE
-int find_square_by_type(Board *board, SquareType type, int starting_position, bool reverse); //DONE
+Square* get_square_at(Board* board, int position);
+int find_square_by_type(Board *board, SquareType type, int starting_position, bool reverse);
 
 void free_board(Board* board);
 
