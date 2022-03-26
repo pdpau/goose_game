@@ -220,19 +220,19 @@ Sequence* try_dice_values(State state, int depth) {
 //    // devolver la secuencia con menos pasos
 //    return best_seq;
 
-    Sequence* best = NULL;
+    Sequence* best_seq = NULL;
 
     for(int i = 1; i <= 6; ++i) {
         Sequence* seq = do_recursive_move(state, i, depth);
-        if(seq != NULL && (best == NULL || best->size > seq->size)) {
-            if(best != NULL) {
-                clear_sequence(best);
-                free(best);
+        if(seq != NULL && (best_seq == NULL || (seq->size < best_seq->size))) {
+            if(best_seq != NULL) {
+                clear_sequence(best_seq);
+                free(best_seq);
             }
-            best = seq;
+            best_seq = seq;
         }
     }
-    return best;
+    return best_seq;
 }
 
 /**

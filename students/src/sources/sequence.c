@@ -4,14 +4,6 @@
 #include "../headers/sequence.h"
 
 
-Step* new_step(int position, int dice_value, Step* next) {
-    Step* s = (Step*) malloc(sizeof(Step));
-    s->position = position;
-    s->dice_value = dice_value;
-    s->next = next;
-    return s;
-}
-
 /**
  * Initializes the sequence, setting first and last to NULL and size to 0.
  *
@@ -25,6 +17,15 @@ void init_sequence(Sequence* sequence) {
     sequence->last = NULL;
     sequence->size = 0;
 }
+
+Step* init_step(int position, int dice_value, Step* next) {
+    Step* step = (Step*) malloc(sizeof(Step));
+    step->position = position;
+    step->dice_value = dice_value;
+    step->next = next;
+    return step;
+}
+
 
 /**
  * Creates a Step dynamically, assigns the position and dice values and adds it
@@ -45,10 +46,10 @@ void add_step_as_first(Sequence* sequence, int position, int dice_value) {
 //    sequence->first = step;
 //    sequence->size++;
     if(!sequence->first) {
-        sequence->first = new_step(position, dice_value, NULL);
+        sequence->first = init_step(position, dice_value, NULL);
         sequence->last = sequence->first;
     } else {
-        sequence->first = new_step(position, dice_value, sequence->first);
+        sequence->first = init_step(position, dice_value, sequence->first);
     }
     sequence->size++;
 }
@@ -73,10 +74,10 @@ void add_step_as_last(Sequence* sequence, int position, int dice_value) {
 //    sequence->last = step; //??
 //    sequence->size++;
     if(!sequence->last) {
-        sequence->last = new_step(position, dice_value, NULL);
+        sequence->last = init_step(position, dice_value, NULL);
         sequence->first = sequence->last;
     } else {
-        Step* step = new_step(position, dice_value, NULL);
+        Step* step = init_step(position, dice_value, NULL);
         sequence->last->next = step;
         sequence->last = step;
     }
