@@ -8,6 +8,7 @@
 #define MAX_COLUMNS 10
 
 #define INVALID_BOARD_DIMENSIONS -1
+#define TYPE_NOT_FOUND -2
 
 typedef struct board Board;
 

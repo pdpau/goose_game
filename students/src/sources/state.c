@@ -113,7 +113,7 @@ int move(State* state, int dice_value, bool print_actions) {
         } else if (type == GOOSE) {
                 //posicion de la siguiente oca
                 int pos = find_square_by_type(board, GOOSE, new_position, false);
-                if (pos != -1) {
+                if (pos != TYPE_NOT_FOUND) {
                     if (print_actions == true) {
                         printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), pos);
                         // print del GOOSE EFFECT
@@ -154,7 +154,7 @@ int move(State* state, int dice_value, bool print_actions) {
             // volver al inicio
             if (print_actions == true) {
                 printf("MOVE: Move player %c from %d to %d.\n", get_symbol(player), get_current_position(player), 1);
-                printf("DEATH: Player dies and go to position %d.\n", 0);
+                printf("DEATH: Player dies and go to position %d.\n", INITIAL_POSITION);
             }
             set_current_position(player, INITIAL_POSITION);
             state->turn++;

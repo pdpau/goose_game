@@ -87,7 +87,7 @@ int find_square_by_type(Board *board, SquareType type, int starting_position, bo
                 return sq->position;
             }
         }
-        return -1;
+        return TYPE_NOT_FOUND;
     } else {
         // decremental
         for (int i = starting_position-1; i > 0; i--) {
@@ -96,7 +96,7 @@ int find_square_by_type(Board *board, SquareType type, int starting_position, bo
                 return sq->position;
             }
         }
-        return -1;
+        return TYPE_NOT_FOUND;
     }
 }
 
