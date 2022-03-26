@@ -34,6 +34,7 @@ void draw_zigzag_board(FILE* fd, State* state);
 
 int init_basic_board(Board* board); // només amb dues caselles de oca
 
-int init_15_board(Board* board); // tablero con 15 casillas pero aun se dibuja incompleto
+int init_15_board(Board* board);
+int init_25_board(Board* board);
 
 #endif //BOARD_UTILS_H

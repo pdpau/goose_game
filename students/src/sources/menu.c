@@ -55,7 +55,8 @@ int show_load_menu(Board *board) {
         printf("%d. Custom empty board\n", OPTION_LOAD_CUSTOM_EMPTY);
         printf("%d. Nine-square basic board\n", OPTION_LOAD_DEFAULT_NINE_BASIC);
         printf("%d. Load from file\n", OPTION_LOAD_FROM_FILE);
-        printf("%d. Fifteen-square basic board\n", OPTION_LOAD_DEFAULT_15);
+        printf("%d. 15-square basic board\n", OPTION_LOAD_DEFAULT_15);
+        printf("%d. 25-square basic board\n", OPTION_LOAD_DEFAULT_25);
         printf("%d. Cancel\n", OPTION_CANCEL);
 
         status = SUCCESS;
@@ -73,8 +74,11 @@ int show_load_menu(Board *board) {
             case OPTION_LOAD_DEFAULT_NINE_BASIC:
                 status = init_basic_board(board);
                 break;
-            case OPTION_LOAD_DEFAULT_15: // OUR OPTION
+            case OPTION_LOAD_DEFAULT_15: // OPCION PERSONALIZADA 1
                 status = init_15_board(board);
+                break;
+            case OPTION_LOAD_DEFAULT_25: // OPCION PERSONALIZADA 2
+                status = init_25_board(board);
                 break;
             case OPTION_LOAD_FROM_FILE:
                 status = load_from_file(board);
