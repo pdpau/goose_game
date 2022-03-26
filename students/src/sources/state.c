@@ -71,7 +71,7 @@ bool is_finished(State* state) {
 int move(State* state, int dice_value, bool print_actions) {
     int status = SUCCESS;
     Player* player = get_current_player(state);
-    if (!player || dice_value < 1) {
+    if (player == NULL || dice_value < 1) {
         return ERROR;
     }
 

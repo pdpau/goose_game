@@ -119,7 +119,7 @@ void start_game(Board *board) {
     }
 }
 
-//Sequence* try_dice_values(State state, int depth); la he posat a sequence.h
+Sequence* try_dice_values(State state, int depth); //la he posat a sequence.h
 
 /**
  * TODO: First, checks if the step count reached the max_depth. If so, returns NULL. If there is room for more steps,
@@ -138,12 +138,29 @@ Sequence* do_recursive_move(State state, int dice_value, int depth) {
     if (depth >= MAX_DEPTH) { // MAX_DEPTH = numero de dados tirados
         return NULL;
     }
-    int last_position = get_size(state.board);
+    int last_position = get_size(state.board) - 1;
 
-    move(&state, dice_value, false);
+    Player* player = get_current_player(&state);
+    if (player == NULL) {
+        printf("ERROR: Problem with get_current_player()\n");
+        return NULL;
+    }
+
+    Square* square = get_square_at(state.board, get_current_position(player));
+    if(square == NULL) {
+        printf("ERROR: Problem with get_current_position(player)\n");
+        return NULL;
+    }
+
+    int square_pos = get_position(square);
+    if (square_pos < last_position) {
+        move(&state, dice_value, false);
+    } else {
+        set_finished(&state, true);
+    }
 
     Sequence* sequence;
-    if (is_finished(&state)) { // partida acabada
+    if (is_finished(&state)) { // partida acabada //// == false
         sequence = (Sequence*) malloc(sizeof(Sequence));
         init_sequence(sequence);
     } else {
@@ -151,30 +168,25 @@ Sequence* do_recursive_move(State state, int dice_value, int depth) {
     }
 
     if (sequence != NULL) {
-        Player* player = get_current_player(&state);
-        if (player == NULL) {
-            printf("ERROR: Problem with get_current_player()\n");
-            return NULL;
-        }
-
-        int pos = get_current_position(player);
-        // add_step_as_first(sequence, pos, dice_value);
-        if (pos < last_position && pos > 0) {
-            if (sequence->first == NULL) {
-                add_step_as_first(sequence, pos, dice_value);
-            } else {
-                add_step_as_last(sequence, pos, dice_value);
-            }
-        } else if (pos == last_position) {
-            if (sequence->first == NULL) { // se supone que el primer paso ya esta ocupado porque estamos llegando al final
-                add_step_as_first(sequence, pos, dice_value);
-            } else {
-                add_step_as_last(sequence, pos, dice_value);
-            }
-            return sequence;
-        } else {
-            return NULL; // posicion no valida
-        }
+//        int pos = get_current_position(player);
+//        // add_step_as_first(sequence, pos, dice_value);
+//        if (pos < last_position && pos > 0) {
+//            if (sequence->first == NULL) {
+//                add_step_as_first(sequence, pos, dice_value);
+//            } else {
+//                add_step_as_last(sequence, pos, dice_value);
+//            }
+//        } else if (pos == last_position) {
+//            if (sequence->first == NULL) { // se supone que el primer paso ya esta ocupado porque estamos llegando al final
+//                add_step_as_first(sequence, pos, dice_value);
+//            } else {
+//                add_step_as_last(sequence, pos, dice_value);
+//            }
+//            return sequence;
+//        } else {
+//            return NULL; // posicion no valida
+//        }
+        add_step_as_first(sequence, get_current_position(player), dice_value);
     }
 
     return sequence;
@@ -193,20 +205,34 @@ Sequence* do_recursive_move(State state, int dice_value, int depth) {
  */
 
 Sequence* try_dice_values(State state, int depth) {
-    Sequence* best_seq = NULL;
+//    Sequence* best_seq = NULL;
+//
+//    for (int i = 1; i <= 6; i++) {
+//        Sequence* seq = do_recursive_move(state, i, depth);
+//        if (seq != NULL && ((best_seq == NULL) || (seq->size < best_seq->size))) {
+//            if (best_seq != NULL) {
+//                clear_sequence(best_seq);
+//                free(best_seq);
+//            }
+//            best_seq = seq;
+//        }
+//    }
+//    // devolver la secuencia con menos pasos
+//    return best_seq;
 
-    for (int i = 1; i <= 6; i++) {
+    Sequence* best = NULL;
+
+    for(int i = 1; i <= 6; ++i) {
         Sequence* seq = do_recursive_move(state, i, depth);
-        if (seq != NULL && ((best_seq == NULL) || (seq->size < best_seq->size))) {
-            if (best_seq != NULL) {
-                clear_sequence(best_seq);
-                free(best_seq);
+        if(seq != NULL && (best == NULL || best->size > seq->size)) {
+            if(best != NULL) {
+                clear_sequence(best);
+                free(best);
             }
-            best_seq = seq;
+            best = seq;
         }
     }
-    // devolver la secuencia con menos pasos
-    return best_seq;
+    return best;
 }
 
 /**

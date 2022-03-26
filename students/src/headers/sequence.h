@@ -23,6 +23,6 @@ void add_step_as_last(Sequence* sequence, int position, int dice_value); //??
 void clear_sequence(Sequence* sequence); //DOING
 void print_sequence(Sequence* sequence); //DOING
 
-Sequence* try_dice_values(State state, int depth); //TODO
+//Sequence* try_dice_values(State state, int depth); //TODO
 
 #endif //SEQUENCE_H
