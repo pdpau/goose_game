@@ -18,10 +18,10 @@ int get_current_position(Player* player) {
     return player->current_position;
 }
 
-void set_blocked_turns (Player* player, int turns) {
+void set_blocked_turns(Player* player, int turns) {
     player->blocked_turns = turns;
 }
-int get_blocked_turns (Player* player) {
+int get_blocked_turns(Player* player) {
     return player->blocked_turns;
 }
 

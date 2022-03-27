@@ -119,36 +119,32 @@ void start_game(Board *board) {
     }
 }
 
-Sequence* try_dice_values(State state, int depth); //la he posat a sequence.h
+
+Sequence* try_dice_values(State state, int depth);
+
 
 /**
- * TODO: First, checks if the step count reached the max_depth. If so, returns NULL. If there is room for more steps,
+ * First, checks if the step count reached the max_depth. If so, returns NULL. If there is room for more steps,
  * does a move (calling move function which updates the state) and checks the result. If the finish square was reached by
  * this movement, creates a sequence, initializing it. If it doesn't, calls try_dice_values to continue searching. This
  * call should return the shortest sequence or NULL. Finally, the step should be added to the sequence, if there is one.
- *
- * @param state The state to move from.
- * @param count The number of steps taken already.
- * @param max_depth The maximum depth allowed.
- *
- * Pre:
- * Post:
  */
 Sequence* do_recursive_move(State state, int dice_value, int depth) {
-    if (depth >= MAX_DEPTH) { // MAX_DEPTH = numero de dados tirados
+    if (depth >= MAX_DEPTH) { // MAX_DEPTH = numero de dados tirados = numero de pasos de la secuencia
         return NULL;
     }
+
     int last_position = get_size(state.board) - 1;
 
     Player* player = get_current_player(&state);
-    if (player == NULL) {
+    if (player == NULL) { // Comprobar que se haya cogido algun jugador
         printf("ERROR: Problem with get_current_player()\n");
         return NULL;
     }
 
     Square* square = get_square_at(state.board, get_current_position(player));
-    if(square == NULL) {
-        printf("ERROR: Problem with get_current_position(player)\n");
+    if (square == NULL) { // Comprobar que se haya cogido alguna casilla
+        printf("ERROR: Problem with get_square_at()\n");
         return NULL;
     }
 
@@ -160,7 +156,7 @@ Sequence* do_recursive_move(State state, int dice_value, int depth) {
     }
 
     Sequence* sequence;
-    if (is_finished(&state)) { // partida acabada //// == false
+    if (is_finished(&state)) {
         sequence = (Sequence*) malloc(sizeof(Sequence));
         init_sequence(sequence);
     } else {
@@ -168,24 +164,6 @@ Sequence* do_recursive_move(State state, int dice_value, int depth) {
     }
 
     if (sequence != NULL) {
-//        int pos = get_current_position(player);
-//        // add_step_as_first(sequence, pos, dice_value);
-//        if (pos < last_position && pos > 0) {
-//            if (sequence->first == NULL) {
-//                add_step_as_first(sequence, pos, dice_value);
-//            } else {
-//                add_step_as_last(sequence, pos, dice_value);
-//            }
-//        } else if (pos == last_position) {
-//            if (sequence->first == NULL) { // se supone que el primer paso ya esta ocupado porque estamos llegando al final
-//                add_step_as_first(sequence, pos, dice_value);
-//            } else {
-//                add_step_as_last(sequence, pos, dice_value);
-//            }
-//            return sequence;
-//        } else {
-//            return NULL; // posicion no valida
-//        }
         add_step_as_first(sequence, get_current_position(player), dice_value);
     }
 
@@ -193,39 +171,14 @@ Sequence* do_recursive_move(State state, int dice_value, int depth) {
 }
 
 
-/**
- * DONE: Given a state, calls do_recursive_move with each dice value looking for sequences that leads to the final square.
- * For each resulting sequence, it returns the shortest one.
- *
- * @param state The state to move from.
- * @param depth The number of steps taken already.
- *
- * Pre:
- * Post:
- */
-
+// Llama al do_recursive_move con valores del 6 al 1, selecciona cual es la secuencia mas corta y la devuelve
 Sequence* try_dice_values(State state, int depth) {
-//    Sequence* best_seq = NULL;
-//
-//    for (int i = 1; i <= 6; i++) {
-//        Sequence* seq = do_recursive_move(state, i, depth);
-//        if (seq != NULL && ((best_seq == NULL) || (seq->size < best_seq->size))) {
-//            if (best_seq != NULL) {
-//                clear_sequence(best_seq);
-//                free(best_seq);
-//            }
-//            best_seq = seq;
-//        }
-//    }
-//    // devolver la secuencia con menos pasos
-//    return best_seq;
-
     Sequence* best_seq = NULL;
 
-    for(int i = 1; i <= 6; ++i) {
+    for (int i = 6; i >= 1; i--) {
         Sequence* seq = do_recursive_move(state, i, depth);
-        if(seq != NULL && (best_seq == NULL || (seq->size < best_seq->size))) {
-            if(best_seq != NULL) {
+        if (seq != NULL && (best_seq == NULL || (seq->size < best_seq->size))) {
+            if (best_seq != NULL) {
                 clear_sequence(best_seq);
                 free(best_seq);
             }
@@ -235,19 +188,8 @@ Sequence* try_dice_values(State state, int depth) {
     return best_seq;
 }
 
-/**
- * Explores the different sequences of dice values that leads to the finish square until a specified MAX_DEPTH,
- * printing the best one, if any.
- *
- * @param board The playing board.
- *
- * Pre: The board is properly initialized.
- * Post: Prints a sequence that leads to the final square or a message pointing out that
- * no sequence was found before reaching the maximum depth.
- */
 
-
-// nos tiene que dar la sequencia de tiradas necesarias para llegar a X casilla
+// Resuelve el tablero y nos da la secuencia de dados mas rapida para ganar, luego de imprimirla libera el espacio en memoria de dicha secuencia
 void solve(Board *board) {
 
     State state;
@@ -261,7 +203,7 @@ void solve(Board *board) {
         printf("Solution:\n");
         print_sequence(sequence);
         clear_sequence(sequence);
-        free(sequence); // ??
+        free(sequence);
     }
 }
 

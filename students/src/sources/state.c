@@ -14,12 +14,12 @@ int get_player_count(State* state) {
 
 int add_player(State* state, char symbol) {
     int status = ERROR;
-    // Comprovem si es pot afegir un nou jugador
+    // Comrobamos si se puede añadir un nuevo jugador
     if (state->turn == 0 && state->player_count < MAX_PLAYERS) {
-        // Creem un nou jugador a la llista players amb index = player_count i l'inicialitzem
+        // Creamos un nuevo jugador en la lista players con indice = player_count y lo inicializamos
         Player* player = &state->players[state->player_count];
         init_player(player, symbol);
-        state->player_count++; // Sumem 1 al nombre de jugadors
+        state->player_count++;
         status = SUCCESS;
     }
     return status;
@@ -45,7 +45,8 @@ bool is_finished(State* state) {
     return state->finished;
 }
 
-// TODO: Moves the current player a number of steps in the board, updating the state's current
+
+// Moves the current player a number of steps in the board, updating the state's current
 //  position.
 //  If the player ends up in an empty square, it just updates the player's current position and
 //  advances the turn. But if they end up in a non-empty square, it applies the corresponding effect,
@@ -53,21 +54,6 @@ bool is_finished(State* state) {
 //  player can throw the dice again.
 //  Also, sets the state as finished if it moves to the last square exactly. If the final position is
 //  beyond the final square, it bounces back.
-
-/**
- * Pre:
- * Post:
- *
- * Moves the current player a number of steps in the board, updating the state's current
- * position.
- *
- * @param state The current state of the game.
- * @param dice_value The number of steps to move.
- * @param print_actions Flag to enable/disable printing messages.
- * @return ERROR if the move ends in an invalid state, SUCCESS otherwise.
- */
-
-// TODO: revisar los prints de cada casilla
 int move(State* state, int dice_value, bool print_actions) {
     int status = SUCCESS;
     Player* player = get_current_player(state);
@@ -161,13 +147,12 @@ int move(State* state, int dice_value, bool print_actions) {
         }
     }
 
-
+    // Comprobar si se ha llegado a la ultima casilla
     Square* last_sq = get_square_at(board, get_current_position(player));
     if (get_position(last_sq) == get_size(board)) {
         set_finished(state, true);
     }
 
     return status;
-    //return get_current_position(player);
 }
 
