@@ -82,7 +82,9 @@ int move(State* state, int dice_value, bool print_actions) {
         if (new_position >= board_size) {
             int last_idx = board_size - 1;
             new_position = last_idx - (new_position % last_idx);
-            printf("Llegaste a la ultima casilla y volviste atrás!\n");
+            if (print_actions == true) {
+                printf("Llegaste a la ultima casilla y volviste atrás!\n");
+            }
         }
         set_current_position(player, new_position);
 

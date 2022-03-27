@@ -61,10 +61,7 @@ void clear_sequence(Sequence* sequence) {
 // Imprime la secuencia de primer a ultimo step
 void print_sequence(Sequence* sequence) {
     for (Step* step = sequence->first; step; step = step->next) {
-        printf("Value: %d, Position: %d\n", step->dice_value, step->position);
-        if (step->next != NULL) {
-            printf(", ");
-        }
+        printf("Dice value: %d, Position reached: %d\n", step->dice_value, step->position);
     }
     printf("\n");
 }
