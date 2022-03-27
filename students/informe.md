@@ -109,5 +109,10 @@ los distintos problemas veíamos distintos puntos de vista, lo que nos ayudaba p
 mejorar el nuestro y llegar a uno común optimizado.
 
 ## Realimentación
+En esta última práctica hemos aprendido el funcionamiento de la memoria dinamica y de las 
+funciones recursivas, algo que ya hemos visto en los seminarios, y ahora hemos aplicado en un ejercicio mas completo.
 
-###### Tus impresiones sobre la práctica, sobre tu desempeño, sobre el proceso de aprendizaje, etc. 
+En cuanto a la práctica en general, estamos todos los miembros de acuerdo en que han sido de gran ayuda los templates 
+de cada entrega, ya que sinó uno no sabe por donde empezar. Así pues, creemos que esta practica es una manera ideal 
+para aprender las bases de la programación y de C, siempre es mejor aprender mientras aplicas los conceptos, te 
+equivocas y arreglas aquellas partes que no funcionan.
